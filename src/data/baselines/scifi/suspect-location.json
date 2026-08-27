@@ -1,0 +1,482 @@
+{
+  "Executive": [
+    "Corporate HQ",
+    "Penthouse",
+    "Skyscraper",
+    "Private residence",
+    "Hideout",
+    "Gang safe-house"
+  ],
+  "Engineer": [
+    "Space station",
+    "Space freighter",
+    "Server room",
+    "Bio-dome",
+    "Lunar base",
+    "Gang safe-house"
+  ],
+  "Pilot": [
+    "Cockpit",
+    "Space freighter",
+    "Galactic cruiser",
+    "Ship port",
+    "Speakeasy",
+    "Abandoned ship"
+  ],
+  "Android": [
+    "Corporate HQ",
+    "Server room",
+    "Laboratory",
+    "Gene lab",
+    "Rooftop",
+    "Abandoned ship"
+  ],
+  "AI": [
+    "Server room",
+    "Corporate HQ",
+    "Space station",
+    "Laboratory",
+    "Megacity underground",
+    "Highway"
+  ],
+  "Hacker": [
+    "Server room",
+    "Arcade",
+    "VR world",
+    "Black market",
+    "Back alley",
+    "Cryo-chamber"
+  ],
+  "Smuggler": [
+    "Black market",
+    "Ship port",
+    "Space freighter",
+    "Back alley",
+    "Gang safe-house",
+    "Alien planet"
+  ],
+  "Corporate agent": [
+    "Corporate HQ",
+    "Skyscraper",
+    "Penthouse",
+    "Private residence",
+    "Junkyard",
+    "Nightclub"
+  ],
+  "Scientist": [
+    "Laboratory",
+    "Gene lab",
+    "Bio-dome",
+    "Corporate HQ",
+    "Dig site",
+    "Arcade"
+  ],
+  "Researcher": [
+    "Laboratory",
+    "Gene lab",
+    "Dig site",
+    "Bio-dome",
+    "VR world",
+    "Brothel"
+  ],
+  "Technician": [
+    "Server room",
+    "Space station",
+    "Cockpit",
+    "Space freighter",
+    "Highway",
+    "Bio-dome"
+  ],
+  "Mechanic": [
+    "Ship port",
+    "Space freighter",
+    "Junkyard",
+    "Space station",
+    "Cockpit",
+    "Cryo-chamber"
+  ],
+  "Security officer": [
+    "Corporate HQ",
+    "Skyscraper",
+    "Military base",
+    "Nightclub",
+    "VR world",
+    "Cockpit"
+  ],
+  "Bounty hunter": [
+    "Black market",
+    "Dive bar",
+    "Back alley",
+    "Ship port",
+    "Rooftop",
+    "Private residence"
+  ],
+  "Informant": [
+    "Dive bar",
+    "Back alley",
+    "Speakeasy",
+    "Black market",
+    "Hideout",
+    "Cryo-chamber"
+  ],
+  "Bartender": [
+    "Dive bar",
+    "Speakeasy",
+    "Nightclub",
+    "Slums",
+    "Rooftop",
+    "Private residence"
+  ],
+  "Dealer": [
+    "Drug den",
+    "Black market",
+    "Back alley",
+    "Gang safe-house",
+    "Arcade",
+    "Union office"
+  ],
+  "Gang member": [
+    "Slums",
+    "Back alley",
+    "Gang safe-house",
+    "Megacity underground",
+    "Hideout",
+    "Cryo-chamber"
+  ],
+  "Union rep": [
+    "Union office",
+    "Corporate HQ",
+    "Skyscraper",
+    "Drug den",
+    "Highway",
+    "Dig site"
+  ],
+  "Whistleblower": [
+    "Corporate HQ",
+    "Server room",
+    "Union office",
+    "Megacity underground",
+    "Highway",
+    "Dive bar"
+  ],
+  "Journalist": [
+    "Nightclub",
+    "Corporate HQ",
+    "Skyscraper",
+    "Dive bar",
+    "Cockpit",
+    "Drug den"
+  ],
+  "Investigator": [
+    "Slums",
+    "Black market",
+    "Corporate HQ",
+    "Back alley",
+    "Cockpit",
+    "Galactic cruiser"
+  ],
+  "Doctor": [
+    "Gene lab",
+    "Corporate HQ",
+    "Private residence",
+    "Space station",
+    "Arcade",
+    "Gang safe-house"
+  ],
+  "Medic": [
+    "Space station",
+    "Space freighter",
+    "Military base",
+    "Bio-dome",
+    "Lunar base",
+    "Gang safe-house"
+  ],
+  "Colonist": [
+    "Lunar base",
+    "Bio-dome",
+    "Alien planet",
+    "Megacity underground",
+    "Junkyard",
+    "Nightclub"
+  ],
+  "Miner": [
+    "Dig site",
+    "Lunar base",
+    "Alien planet",
+    "Junkyard",
+    "Penthouse",
+    "Hideout"
+  ],
+  "Freight captain": [
+    "Space freighter",
+    "Ship port",
+    "Cockpit",
+    "Galactic cruiser",
+    "Hideout",
+    "Cryo-chamber"
+  ],
+  "Crew member": [
+    "Space freighter",
+    "Galactic cruiser",
+    "Space station",
+    "Cockpit",
+    "Arcade",
+    "Union office"
+  ],
+  "Passenger": [
+    "Galactic cruiser",
+    "Space station",
+    "Ship port",
+    "Brothel",
+    "Dive bar",
+    "Highway"
+  ],
+  "Stowaway": [
+    "Space freighter",
+    "Galactic cruiser",
+    "Abandoned ship",
+    "Junkyard",
+    "VR world",
+    "Lunar base"
+  ],
+  "Refugee": [
+    "Slums",
+    "Megacity underground",
+    "Abandoned ship",
+    "Drug den",
+    "Speakeasy",
+    "Junkyard"
+  ],
+  "Cultist": [
+    "Bio-dome",
+    "Abandoned ship",
+    "Megacity underground",
+    "Alien planet",
+    "Arcade",
+    "Union office"
+  ],
+  "Cyborg": [
+    "Junkyard",
+    "Corporate HQ",
+    "Military base",
+    "Server room",
+    "Arcade",
+    "Union office"
+  ],
+  "Clone": [
+    "Gene lab",
+    "Laboratory",
+    "Corporate HQ",
+    "Slums",
+    "Junkyard",
+    "Nightclub"
+  ],
+  "Synthetic": [
+    "Corporate HQ",
+    "Laboratory",
+    "Server room",
+    "Gene lab",
+    "VR world",
+    "Megacity underground"
+  ],
+  "Envoy": [
+    "Corporate HQ",
+    "Skyscraper",
+    "Penthouse",
+    "Brothel",
+    "Hideout",
+    "Gang safe-house"
+  ],
+  "Ambassador": [
+    "Corporate HQ",
+    "Skyscraper",
+    "Penthouse",
+    "Galactic cruiser",
+    "Rooftop",
+    "Abandoned ship"
+  ],
+  "Administrator": [
+    "Corporate HQ",
+    "Union office",
+    "Skyscraper",
+    "Galactic cruiser",
+    "Megacity underground",
+    "Dig site"
+  ],
+  "Bureaucrat": [
+    "Corporate HQ",
+    "Union office",
+    "Skyscraper",
+    "Slums",
+    "Junkyard",
+    "Nightclub"
+  ],
+  "Broker": [
+    "Black market",
+    "Corporate HQ",
+    "Penthouse",
+    "Dive bar",
+    "Rooftop",
+    "Private residence"
+  ],
+  "Trader": [
+    "Black market",
+    "Ship port",
+    "Space freighter",
+    "Speakeasy",
+    "Highway",
+    "Military base"
+  ],
+  "Pirate": [
+    "Space freighter",
+    "Ship port",
+    "Abandoned ship",
+    "Alien planet",
+    "Speakeasy",
+    "Nightclub"
+  ],
+  "Mercenary": [
+    "Military base",
+    "Black market",
+    "Ship port",
+    "Back alley",
+    "Lunar base",
+    "Penthouse"
+  ],
+  "Soldier": [
+    "Military base",
+    "Ship port",
+    "Space station",
+    "Drug den",
+    "VR world",
+    "Private residence"
+  ],
+  "Officer": [
+    "Military base",
+    "Corporate HQ",
+    "Space station",
+    "Brothel",
+    "Dive bar",
+    "Rooftop"
+  ],
+  "Prisoner": [
+    "Cryo-chamber",
+    "Military base",
+    "Megacity underground",
+    "Brothel",
+    "Speakeasy",
+    "Slums"
+  ],
+  "Warden": [
+    "Cryo-chamber",
+    "Military base",
+    "Corporate HQ",
+    "Drug den",
+    "Highway",
+    "Speakeasy"
+  ],
+  "Programmer": [
+    "Server room",
+    "VR world",
+    "Corporate HQ",
+    "Arcade",
+    "Speakeasy",
+    "Union office"
+  ],
+  "Analyst": [
+    "Server room",
+    "Corporate HQ",
+    "Skyscraper",
+    "Galactic cruiser",
+    "Rooftop",
+    "Abandoned ship"
+  ],
+  "Courier": [
+    "Ship port",
+    "Back alley",
+    "Skyscraper",
+    "Space station",
+    "Arcade",
+    "Nightclub"
+  ],
+  "Surveyor": [
+    "Dig site",
+    "Alien planet",
+    "Lunar base",
+    "Drug den",
+    "VR world",
+    "Abandoned ship"
+  ],
+  "Explorer": [
+    "Alien planet",
+    "Dig site",
+    "Lunar base",
+    "Abandoned ship",
+    "Hideout",
+    "Gang safe-house"
+  ],
+  "Xenobiologist": [
+    "Alien planet",
+    "Gene lab",
+    "Laboratory",
+    "Dig site",
+    "Highway",
+    "VR world"
+  ],
+  "Terraformer": [
+    "Alien planet",
+    "Bio-dome",
+    "Lunar base",
+    "Drug den",
+    "Highway",
+    "Arcade"
+  ],
+  "Historian": [
+    "Dig site",
+    "Corporate HQ",
+    "Skyscraper",
+    "Brothel",
+    "Hideout",
+    "Cryo-chamber"
+  ],
+  "Archivist": [
+    "Server room",
+    "Corporate HQ",
+    "Laboratory",
+    "Slums",
+    "Rooftop",
+    "Private residence"
+  ],
+  "Bioengineer": [
+    "Gene lab",
+    "Laboratory",
+    "Bio-dome",
+    "Slums",
+    "Rooftop",
+    "Private residence"
+  ],
+  "Pharmacist": [
+    "Drug den",
+    "Gene lab",
+    "Corporate HQ",
+    "Brothel",
+    "Dive bar",
+    "Alien planet"
+  ],
+  "Founder": [
+    "Corporate HQ",
+    "Penthouse",
+    "Skyscraper",
+    "Brothel",
+    "Hideout",
+    "Cryo-chamber"
+  ],
+  "Investor": [
+    "Corporate HQ",
+    "Penthouse",
+    "Skyscraper",
+    "Brothel",
+    "Cockpit",
+    "Back alley"
+  ]
+}

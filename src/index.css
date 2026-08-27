@@ -24,3 +24,29 @@
     @apply font-display;
   }
 }
+
+@media print {
+  body {
+    background: none;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    inset: 0;
+    padding: 1.5rem;
+  }
+
+  .print-area .overflow-auto,
+  .print-area .overflow-x-auto {
+    overflow: visible !important;
+  }
+}

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { generateTable, pickN } from '@/lib/draw'
-import type { Config } from '@/types'
+import type { ResolvedConfig } from '@/types'
 
 describe('pickN', () => {
   it('returns n distinct values when the pool is large enough', () => {
@@ -31,10 +31,13 @@ describe('pickN', () => {
 })
 
 describe('generateTable', () => {
-  const config: Config = {
+  const config: ResolvedConfig = {
     suspects: ['S1', 'S2', 'S3', 'S4', 'S5'],
     truths: ['T1', 'T2', 'T3', 'T4', 'T5'],
     motives: ['M1', 'M2', 'M3', 'M4', 'M5'],
+    locations: ['Bank', 'Pier'],
+    treacheries: ['Vanished', 'Nope'],
+    objects: ['Key'],
     locationMap: { S1: ['Bank'], S2: ['Bank'], S3: ['Bank'], S4: ['Bank'], S5: ['Pier'] },
     treacheryMap: { T1: ['Vanished'] },
     objectMap: { M1: ['Key'], M2: ['Key'], M3: ['Key'], M4: ['Key'] },

@@ -51,7 +51,7 @@ export function ResultTable({ table, arcana }: ResultTableProps) {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>{isTarot ? 'Draw' : 'Suit'}</TableHead>
+          {!isTarot && <TableHead>Suit</TableHead>}
           {columns.map((column) => (
             <TableHead key={column.heading}>{column.heading}</TableHead>
           ))}
@@ -60,12 +60,20 @@ export function ResultTable({ table, arcana }: ResultTableProps) {
       <TableBody>
         {Array.from({ length: rowCount }, (_, row) => (
           <TableRow key={row}>
-            <TableCell className="font-body text-ink-soft">{rankColumn[row]}</TableCell>
+            {!isTarot && (
+              <TableCell className="font-body text-ink-soft">
+                {rankColumn[row]}
+              </TableCell>
+            )}
             {columns.map((column) => (
               <TableCell key={column.heading}>
-                <span className="font-semibold text-ink">{column.values[row]}</span>
+                <span className="font-semibold text-ink">
+                  {column.values[row]}
+                </span>
                 {isTarot && (
-                  <span className="block font-body text-xs text-ink-soft">{column.labels[row]}</span>
+                  <span className="block font-body text-ink-soft text-xs">
+                    {column.labels[row]}
+                  </span>
                 )}
               </TableCell>
             ))}

@@ -1,4 +1,4 @@
-import type { CardMode, Config, DrawResult, EligibilityMap, GeneratedTable } from '@/types'
+import type { CardMode, DrawResult, EligibilityMap, GeneratedTable, ResolvedConfig } from '@/types'
 import { shuffle } from '@/lib/shuffle'
 
 /**
@@ -41,7 +41,7 @@ export function drawCount(mode: CardMode): number {
  * chosen context value, then draws the mode-appropriate number of entries.
  */
 export function generateTable(
-  config: Config,
+  config: ResolvedConfig,
   location: string,
   object: string,
   treachery: string,

@@ -1,0 +1,482 @@
+{
+  "Butler": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Parlour",
+    "Ballroom",
+    "Stables"
+  ],
+  "Housekeeper": [
+    "Manor",
+    "Family mansion",
+    "Servant's quarters",
+    "Estate",
+    "Parlour",
+    "Windmill"
+  ],
+  "Groundskeeper": [
+    "Garden",
+    "Estate",
+    "Manor",
+    "Cemetery",
+    "Stables",
+    "Shipwreck"
+  ],
+  "Physician": [
+    "Hospital",
+    "Asylum",
+    "Manor",
+    "Private study",
+    "Sewers",
+    "Attic"
+  ],
+  "Nurse": [
+    "Hospital",
+    "Asylum",
+    "Manor",
+    "Servant's quarters",
+    "Lighthouse",
+    "Ballroom"
+  ],
+  "Asylum warden": [
+    "Asylum",
+    "Hospital",
+    "Cellar",
+    "Townhouse",
+    "Surveyor camp",
+    "Stables"
+  ],
+  "Patient": [
+    "Asylum",
+    "Hospital",
+    "Attic",
+    "Cellar",
+    "Lighthouse",
+    "Bell tower"
+  ],
+  "Priest": [
+    "Chapel",
+    "Cemetery",
+    "Family mansion",
+    "Country road",
+    "Sewers",
+    "Asylum"
+  ],
+  "Undertaker": [
+    "Cemetery",
+    "Catacombs",
+    "Family mansion",
+    "Ballroom",
+    "Cabin",
+    "Cellar"
+  ],
+  "Gravedigger": [
+    "Cemetery",
+    "Catacombs",
+    "Moor",
+    "Garden",
+    "Theatre",
+    "Shipwreck"
+  ],
+  "Innkeeper": [
+    "Inn",
+    "Country road",
+    "City streets",
+    "Garden",
+    "Asylum",
+    "Office"
+  ],
+  "Caretaker": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Lighthouse",
+    "Cabin",
+    "Island"
+  ],
+  "Historian": [
+    "Library",
+    "Reading room",
+    "Private study",
+    "Observatory",
+    "Asylum",
+    "Windmill"
+  ],
+  "Antiquarian": [
+    "Library",
+    "Private study",
+    "Reading room",
+    "Manor",
+    "Rural farmhouse",
+    "Parlour"
+  ],
+  "Collector": [
+    "Private study",
+    "Manor",
+    "Attic",
+    "Family mansion",
+    "Surveyor camp",
+    "Island"
+  ],
+  "Occultist": [
+    "Cellar",
+    "Catacombs",
+    "Attic",
+    "Chapel",
+    "Moor",
+    "Cabin"
+  ],
+  "Medium": [
+    "Parlour",
+    "Ballroom",
+    "Attic",
+    "Chapel",
+    "Reading room",
+    "Office"
+  ],
+  "Spiritualist": [
+    "Parlour",
+    "Chapel",
+    "Attic",
+    "Cemetery",
+    "Bell tower",
+    "Catacombs"
+  ],
+  "Heir": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Private study",
+    "Asylum",
+    "Windmill"
+  ],
+  "Tutor": [
+    "Manor",
+    "Family mansion",
+    "Library",
+    "Ballroom",
+    "Cabin",
+    "Chapel"
+  ],
+  "Driver": [
+    "Country road",
+    "City streets",
+    "Docks",
+    "Manor",
+    "Theatre",
+    "Shipwreck"
+  ],
+  "Fisher": [
+    "Docks",
+    "Island",
+    "Shipwreck",
+    "Lighthouse",
+    "Theatre",
+    "Windmill"
+  ],
+  "Cult leader": [
+    "Cellar",
+    "Catacombs",
+    "Chapel",
+    "Moor",
+    "Windmill",
+    "Observatory"
+  ],
+  "Acolyte": [
+    "Chapel",
+    "Catacombs",
+    "Cellar",
+    "Moor",
+    "Rural farmhouse",
+    "Cabin"
+  ],
+  "Scholar": [
+    "Library",
+    "Reading room",
+    "Observatory",
+    "Private study",
+    "Sewers",
+    "City streets"
+  ],
+  "Librarian": [
+    "Library",
+    "Reading room",
+    "Manor",
+    "Garden",
+    "Inn",
+    "Office"
+  ],
+  "Curator": [
+    "Library",
+    "Manor",
+    "Private study",
+    "Family mansion",
+    "Attic",
+    "Observatory"
+  ],
+  "Journalist": [
+    "City streets",
+    "Inn",
+    "Theatre",
+    "Country road",
+    "Reading room",
+    "Office"
+  ],
+  "Investigator": [
+    "City streets",
+    "Inn",
+    "Manor",
+    "Sewers",
+    "Catacombs",
+    "Office"
+  ],
+  "Constable": [
+    "City streets",
+    "Docks",
+    "Inn",
+    "Sewers",
+    "Hospital",
+    "Observatory"
+  ],
+  "Vagrant": [
+    "City streets",
+    "Sewers",
+    "Docks",
+    "Country road",
+    "Cabin",
+    "Garden"
+  ],
+  "Recluse": [
+    "Cabin",
+    "Moor",
+    "Lighthouse",
+    "Windmill",
+    "Island",
+    "Country road"
+  ],
+  "Stranger": [
+    "Inn",
+    "Country road",
+    "City streets",
+    "Docks",
+    "Bell tower",
+    "Hospital"
+  ],
+  "Traveller": [
+    "Inn",
+    "Country road",
+    "City streets",
+    "Docks",
+    "Bell tower",
+    "Island"
+  ],
+  "Guest": [
+    "Manor",
+    "Family mansion",
+    "Ballroom",
+    "Parlour",
+    "Theatre",
+    "Windmill"
+  ],
+  "Relative": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Ballroom",
+    "Sewers",
+    "Docks"
+  ],
+  "Sibling": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Ballroom",
+    "Bell tower",
+    "Inn"
+  ],
+  "Ward": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Servant's quarters",
+    "Cabin",
+    "Library"
+  ],
+  "Guardian": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Garden",
+    "Theatre",
+    "Windmill"
+  ],
+  "Caregiver": [
+    "Manor",
+    "Family mansion",
+    "Servant's quarters",
+    "Hospital",
+    "Surveyor camp",
+    "Stables"
+  ],
+  "Cook": [
+    "Manor",
+    "Family mansion",
+    "Servant's quarters",
+    "Townhouse",
+    "Hospital",
+    "Observatory"
+  ],
+  "Servant": [
+    "Manor",
+    "Family mansion",
+    "Servant's quarters",
+    "Cellar",
+    "Bell tower",
+    "Lighthouse"
+  ],
+  "Valet": [
+    "Manor",
+    "Family mansion",
+    "Servant's quarters",
+    "Rural farmhouse",
+    "Cabin",
+    "Moor"
+  ],
+  "Stablehand": [
+    "Stables",
+    "Manor",
+    "Estate",
+    "Ballroom",
+    "Bell tower",
+    "Observatory"
+  ],
+  "Surveyor": [
+    "Surveyor camp",
+    "Moor",
+    "Country road",
+    "Rural farmhouse",
+    "Bell tower",
+    "Office"
+  ],
+  "Naturalist": [
+    "Moor",
+    "Garden",
+    "Island",
+    "Rural farmhouse",
+    "Lighthouse",
+    "Parlour"
+  ],
+  "Botanist": [
+    "Garden",
+    "Rural farmhouse",
+    "Moor",
+    "Townhouse",
+    "Surveyor camp",
+    "Stables"
+  ],
+  "Taxidermist": [
+    "Cellar",
+    "Attic",
+    "Manor",
+    "Private study",
+    "Bell tower",
+    "Reading room"
+  ],
+  "Mortician": [
+    "Catacombs",
+    "Cemetery",
+    "Family mansion",
+    "Servant's quarters",
+    "Reading room",
+    "Office"
+  ],
+  "Chaplain": [
+    "Chapel",
+    "Asylum",
+    "Cemetery",
+    "Townhouse",
+    "Surveyor camp",
+    "Island"
+  ],
+  "Monk": [
+    "Chapel",
+    "Catacombs",
+    "Cemetery",
+    "Garden",
+    "Reading room",
+    "Office"
+  ],
+  "Lighthouse keeper": [
+    "Lighthouse",
+    "Island",
+    "Docks",
+    "Shipwreck",
+    "Inn",
+    "Office"
+  ],
+  "Sailor": [
+    "Docks",
+    "Shipwreck",
+    "Island",
+    "Lighthouse",
+    "Sewers",
+    "Rural farmhouse"
+  ],
+  "Estate manager": [
+    "Estate",
+    "Manor",
+    "Family mansion",
+    "Townhouse",
+    "Theatre",
+    "Shipwreck"
+  ],
+  "Apprentice": [
+    "Manor",
+    "Private study",
+    "Library",
+    "Cellar",
+    "Rural farmhouse",
+    "Parlour"
+  ],
+  "Assistant": [
+    "Manor",
+    "Private study",
+    "Hospital",
+    "Library",
+    "Rural farmhouse",
+    "Stables"
+  ],
+  "Confidant": [
+    "Parlour",
+    "Manor",
+    "Family mansion",
+    "Townhouse",
+    "Surveyor camp",
+    "Observatory"
+  ],
+  "Executor": [
+    "Private study",
+    "Manor",
+    "Family mansion",
+    "Townhouse",
+    "Theatre",
+    "Shipwreck"
+  ],
+  "Beneficiary": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Townhouse",
+    "Surveyor camp",
+    "Stables"
+  ],
+  "Descendant": [
+    "Manor",
+    "Family mansion",
+    "Estate",
+    "Cemetery",
+    "Attic",
+    "Observatory"
+  ]
+}

@@ -1,0 +1,483 @@
+{
+  "Knight": [
+    "Castle",
+    "Battlefield",
+    "Barracks",
+    "Tourney grounds",
+    "Training grounds",
+    "Rampart",
+    "Watch tower"
+  ],
+  "Squire": [
+    "Castle",
+    "Barracks",
+    "Training grounds",
+    "Smithy",
+    "Tourney grounds",
+    "Apothecary"
+  ],
+  "Blacksmith": [
+    "Smithy",
+    "Armoury",
+    "Market",
+    "Mine",
+    "Castle",
+    "Creature's lair"
+  ],
+  "Innkeeper": [
+    "Tavern",
+    "Market",
+    "Town square",
+    "Hamlet",
+    "Farmland",
+    "Workshop"
+  ],
+  "Monk": [
+    "Monastery",
+    "Cathedral",
+    "Sanctuary",
+    "Archives",
+    "Crypt",
+    "Peasant's home"
+  ],
+  "Mage": [
+    "Ruins",
+    "Archives",
+    "Sanctuary",
+    "Dungeon",
+    "Cave system",
+    "Watch tower"
+  ],
+  "Alchemist": [
+    "Apothecary",
+    "Market",
+    "Workshop",
+    "Archives",
+    "Ruins",
+    "Training grounds"
+  ],
+  "Herbalist": [
+    "Apothecary",
+    "Forest",
+    "Farmland",
+    "Market",
+    "Hamlet",
+    "Workshop"
+  ],
+  "Merchant": [
+    "Market",
+    "Town square",
+    "Guild hall",
+    "Tavern",
+    "Hamlet",
+    "Tourney grounds"
+  ],
+  "Guildmaster": [
+    "Guild hall",
+    "Market",
+    "Town square",
+    "Workshop",
+    "Archives",
+    "Crypt"
+  ],
+  "Farmer": [
+    "Farmland",
+    "Hamlet",
+    "Market",
+    "Smithy",
+    "Mine",
+    "Fighting pits"
+  ],
+  "Miller": [
+    "Farmland",
+    "Hamlet",
+    "Market",
+    "Armoury",
+    "Apothecary",
+    "Tourney grounds"
+  ],
+  "Bard": [
+    "Tavern",
+    "Carnival",
+    "Town square",
+    "Castle",
+    "Market",
+    "Creature's lair"
+  ],
+  "Thief": [
+    "Market",
+    "Town square",
+    "Ruins",
+    "Dungeon",
+    "Cave system",
+    "Bridge"
+  ],
+  "Mercenary": [
+    "Battlefield",
+    "Barracks",
+    "Fighting pits",
+    "Tavern",
+    "Training grounds",
+    "Tourney grounds"
+  ],
+  "Guard captain": [
+    "Barracks",
+    "Castle",
+    "Watch tower",
+    "Rampart",
+    "Town square",
+    "Crypt"
+  ],
+  "Scribe": [
+    "Archives",
+    "Castle",
+    "Monastery",
+    "Guild hall",
+    "Battlefield",
+    "Torture chamber"
+  ],
+  "Cleric": [
+    "Cathedral",
+    "Sanctuary",
+    "Monastery",
+    "Crypt",
+    "Carnival",
+    "Lake"
+  ],
+  "Ranger": [
+    "Forest",
+    "Mountain path",
+    "Campsite",
+    "Cave system",
+    "Lake",
+    "Peasant's home"
+  ],
+  "Hunter": [
+    "Forest",
+    "Mountain path",
+    "Campsite",
+    "Lake",
+    "Cave system",
+    "Workshop"
+  ],
+  "Noble": [
+    "Castle",
+    "Cathedral",
+    "Town square",
+    "Rampart",
+    "Sanctuary",
+    "Peasant's home"
+  ],
+  "Steward": [
+    "Castle",
+    "Farmland",
+    "Hamlet",
+    "Market",
+    "Archives",
+    "Armoury"
+  ],
+  "Servant": [
+    "Castle",
+    "Cathedral",
+    "Monastery",
+    "Town square",
+    "Battlefield",
+    "Barracks"
+  ],
+  "Prisoner": [
+    "Dungeon",
+    "Torture chamber",
+    "Crypt",
+    "Ruins",
+    "Battlefield",
+    "Peasant's home"
+  ],
+  "Beggar": [
+    "Town square",
+    "Market",
+    "Bridge",
+    "Hamlet",
+    "Armoury",
+    "Creature's lair"
+  ],
+  "Pilgrim": [
+    "Cathedral",
+    "Sanctuary",
+    "Monastery",
+    "Mountain path",
+    "Bridge",
+    "Peasant's home"
+  ],
+  "Cultist": [
+    "Ruins",
+    "Crypt",
+    "Cave system",
+    "Torture chamber",
+    "Dungeon",
+    "Rampart"
+  ],
+  "Elder": [
+    "Hamlet",
+    "Sanctuary",
+    "Monastery",
+    "Town square",
+    "Carnival",
+    "Rampart"
+  ],
+  "Chieftain": [
+    "Hamlet",
+    "Campsite",
+    "Battlefield",
+    "Mountain path",
+    "Carnival",
+    "Lake"
+  ],
+  "Shaman": [
+    "Forest",
+    "Campsite",
+    "Cave system",
+    "Mountain path",
+    "Sanctuary",
+    "Battlefield"
+  ],
+  "Druid": [
+    "Forest",
+    "Lake",
+    "Mountain path",
+    "Campsite",
+    "Farmland",
+    "Rampart"
+  ],
+  "Sorcerer": [
+    "Ruins",
+    "Cave system",
+    "Dungeon",
+    "Watch tower",
+    "Archives",
+    "Campsite"
+  ],
+  "Enchanter": [
+    "Workshop",
+    "Archives",
+    "Market",
+    "Ruins",
+    "Watch tower",
+    "Fighting pits"
+  ],
+  "Armorer": [
+    "Armoury",
+    "Smithy",
+    "Castle",
+    "Barracks",
+    "Carnival",
+    "Creature's lair"
+  ],
+  "Fletcher": [
+    "Smithy",
+    "Armoury",
+    "Forest",
+    "Market",
+    "Mine",
+    "Fighting pits"
+  ],
+  "Stablehand": [
+    "Castle",
+    "Barracks",
+    "Farmland",
+    "Market",
+    "Training grounds",
+    "Carnival"
+  ],
+  "Cook": [
+    "Tavern",
+    "Castle",
+    "Monastery",
+    "Hamlet",
+    "Carnival",
+    "Lake"
+  ],
+  "Gravedigger": [
+    "Crypt",
+    "Cathedral",
+    "Ruins",
+    "Torture chamber",
+    "Mine",
+    "Workshop"
+  ],
+  "Jailer": [
+    "Dungeon",
+    "Torture chamber",
+    "Castle",
+    "Smithy",
+    "Farmland",
+    "Tourney grounds"
+  ],
+  "Executioner": [
+    "Torture chamber",
+    "Dungeon",
+    "Castle",
+    "Town square",
+    "Watch tower",
+    "Fighting pits"
+  ],
+  "Sailor": [
+    "Bridge",
+    "Lake",
+    "Market",
+    "Town square",
+    "Battlefield",
+    "Torture chamber"
+  ],
+  "Ferryman": [
+    "Bridge",
+    "Lake",
+    "Market",
+    "Smithy",
+    "Mine",
+    "Fighting pits"
+  ],
+  "Cartographer": [
+    "Archives",
+    "Guild hall",
+    "Ruins",
+    "Market",
+    "Armoury",
+    "Barracks"
+  ],
+  "Tax collector": [
+    "Market",
+    "Town square",
+    "Castle",
+    "Guild hall",
+    "Hamlet",
+    "Cathedral"
+  ],
+  "Envoy": [
+    "Castle",
+    "Town square",
+    "Guild hall",
+    "Market",
+    "Watch tower",
+    "Fighting pits"
+  ],
+  "Spy": [
+    "Tavern",
+    "Market",
+    "Town square",
+    "Ruins",
+    "Bridge",
+    "Creature's lair"
+  ],
+  "Assassin": [
+    "Dungeon",
+    "Ruins",
+    "Torture chamber",
+    "Cave system",
+    "Bridge",
+    "Creature's lair"
+  ],
+  "Bounty hunter": [
+    "Tavern",
+    "Market",
+    "Cave system",
+    "Mountain path",
+    "Ruins",
+    "Creature's lair"
+  ],
+  "Miner": [
+    "Mine",
+    "Cave system",
+    "Mountain path",
+    "Armoury",
+    "Apothecary",
+    "Tourney grounds"
+  ],
+  "Trapper": [
+    "Forest",
+    "Mountain path",
+    "Campsite",
+    "Cave system",
+    "Training grounds",
+    "Crypt"
+  ],
+  "Trader": [
+    "Market",
+    "Town square",
+    "Guild hall",
+    "Hamlet",
+    "Training grounds",
+    "Dungeon"
+  ],
+  "Jester": [
+    "Castle",
+    "Carnival",
+    "Tavern",
+    "Town square",
+    "Apothecary",
+    "Tourney grounds"
+  ],
+  "Minstrel": [
+    "Tavern",
+    "Carnival",
+    "Castle",
+    "Town square",
+    "Apothecary",
+    "Peasant's home"
+  ],
+  "Beastmaster": [
+    "Forest",
+    "Creature's lair",
+    "Campsite",
+    "Cave system",
+    "Armoury",
+    "Barracks"
+  ],
+  "Falconer": [
+    "Forest",
+    "Castle",
+    "Mountain path",
+    "Campsite",
+    "Mine",
+    "Fighting pits"
+  ],
+  "Watchman": [
+    "Watch tower",
+    "Rampart",
+    "Town square",
+    "Bridge",
+    "Training grounds",
+    "Farmland"
+  ],
+  "Apprentice": [
+    "Smithy",
+    "Workshop",
+    "Guild hall",
+    "Apothecary",
+    "Archives",
+    "Creature's lair"
+  ],
+  "Healer": [
+    "Apothecary",
+    "Sanctuary",
+    "Monastery",
+    "Cathedral",
+    "Mine",
+    "Crypt"
+  ],
+  "Regent": [
+    "Castle",
+    "Cathedral",
+    "Town square",
+    "Rampart",
+    "Battlefield",
+    "Peasant's home"
+  ],
+  "Outlaw": [
+    "Forest",
+    "Cave system",
+    "Ruins",
+    "Mountain path",
+    "Bridge",
+    "Peasant's home"
+  ]
+}

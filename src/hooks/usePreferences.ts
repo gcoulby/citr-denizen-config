@@ -1,11 +1,12 @@
 import { useCallback, useMemo } from 'react'
 
 import { usePersistentState } from '@/hooks/usePersistentState'
-import type { CardMode, SaveStatus } from '@/types'
+import type { CardMode, SaveStatus, Theme } from '@/types'
 
 const STORAGE_KEY = 'noir-prefs-v1'
 
 export interface Preferences {
+  theme: Theme
   activeTab: string
   mode: CardMode
   location: string
@@ -14,7 +15,8 @@ export interface Preferences {
 }
 
 const DEFAULTS: Preferences = {
-  activeTab: 'generator',
+  theme: 'noir',
+  activeTab: 'suspects',
   mode: 'standard',
   location: '',
   object: '',

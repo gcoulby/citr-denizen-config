@@ -1,31 +1,81 @@
-import type { ArcanaGroups, Baselines, Config, ContextLists, EligibilityMap, RoleLists } from '@/types'
+import type {
+  ArcanaGroups,
+  Config,
+  EligibilityMap,
+  Theme,
+  ThemeBaselines,
+  ThemeConfig,
+  ThemeContent,
+} from '@/types'
+import { THEMES } from '@/types'
 
-import arcana from './defaults/arcana.json'
-import locations from './defaults/locations.json'
-import motives from './defaults/motives.json'
-import objects from './defaults/objects.json'
-import suspects from './defaults/suspects.json'
-import treacheries from './defaults/treacheries.json'
-import truths from './defaults/truths.json'
+import arcana from './shared/arcana.json'
+import motives from './shared/motives.json'
+import treacheries from './shared/treacheries.json'
+import truths from './shared/truths.json'
 
-import motiveObject from './baselines/motive-object.json'
-import suspectLocation from './baselines/suspect-location.json'
 import truthTreachery from './baselines/truth-treachery.json'
 
-export function loadDefaultRoleLists(): RoleLists {
-  return {
-    suspects: [...suspects],
-    truths: [...truths],
-    motives: [...motives],
-  }
+import noirSuspects from './baselines/noir/suspects.json'
+import noirLocations from './baselines/noir/locations.json'
+import noirObjects from './baselines/noir/objects.json'
+import noirSuspectLocation from './baselines/noir/suspect-location.json'
+import noirMotiveObject from './baselines/noir/motive-object.json'
+
+import fantasySuspects from './baselines/fantasy/suspects.json'
+import fantasyLocations from './baselines/fantasy/locations.json'
+import fantasyObjects from './baselines/fantasy/objects.json'
+import fantasySuspectLocation from './baselines/fantasy/suspect-location.json'
+
+import horrorSuspects from './baselines/horror/suspects.json'
+import horrorLocations from './baselines/horror/locations.json'
+import horrorObjects from './baselines/horror/objects.json'
+import horrorSuspectLocation from './baselines/horror/suspect-location.json'
+
+import scifiSuspects from './baselines/scifi/suspects.json'
+import scifiLocations from './baselines/scifi/locations.json'
+import scifiObjects from './baselines/scifi/objects.json'
+import scifiSuspectLocation from './baselines/scifi/suspect-location.json'
+
+interface ThemeSource {
+  content: ThemeContent
+  suspectLocation: EligibilityMap
+  motiveObject: EligibilityMap | null
 }
 
-export function loadContextLists(): ContextLists {
-  return {
-    locations: [...locations],
-    treacheries: [...treacheries],
-    objects: [...objects],
-  }
+const THEME_DATA: Record<Theme, ThemeSource> = {
+  noir: {
+    content: { suspects: noirSuspects, locations: noirLocations, objects: noirObjects },
+    suspectLocation: noirSuspectLocation,
+    motiveObject: noirMotiveObject,
+  },
+  fantasy: {
+    content: { suspects: fantasySuspects, locations: fantasyLocations, objects: fantasyObjects },
+    suspectLocation: fantasySuspectLocation,
+    motiveObject: null,
+  },
+  horror: {
+    content: { suspects: horrorSuspects, locations: horrorLocations, objects: horrorObjects },
+    suspectLocation: horrorSuspectLocation,
+    motiveObject: null,
+  },
+  scifi: {
+    content: { suspects: scifiSuspects, locations: scifiLocations, objects: scifiObjects },
+    suspectLocation: scifiSuspectLocation,
+    motiveObject: null,
+  },
+}
+
+export function loadSharedTruths(): string[] {
+  return [...truths]
+}
+
+export function loadSharedMotives(): string[] {
+  return [...motives]
+}
+
+export function loadSharedTreacheries(): string[] {
+  return [...treacheries]
 }
 
 export function loadArcana(): ArcanaGroups {
@@ -36,36 +86,59 @@ export function loadArcana(): ArcanaGroups {
   }
 }
 
-export function loadBaselines(): Baselines {
+export function loadThemeContent(theme: Theme): ThemeContent {
+  const { content } = THEME_DATA[theme]
   return {
-    location: cloneMap(suspectLocation),
-    treachery: cloneMap(truthTreachery),
-    object: cloneMap(motiveObject),
+    suspects: [...content.suspects],
+    locations: [...content.locations],
+    objects: [...content.objects],
+  }
+}
+
+export function loadSharedTreacheryBaseline(): EligibilityMap {
+  return cloneMap(truthTreachery)
+}
+
+export function loadThemeBaselines(theme: Theme): ThemeBaselines {
+  const data = THEME_DATA[theme]
+  return {
+    suspectLocation: cloneMap(data.suspectLocation),
+    motiveObject: data.motiveObject === null ? null : cloneMap(data.motiveObject),
+  }
+}
+
+function defaultThemeConfig(theme: Theme): ThemeConfig {
+  const content = loadThemeContent(theme)
+  const baselines = loadThemeBaselines(theme)
+  return {
+    suspects: content.suspects,
+    locationMap: pickKeys(baselines.suspectLocation, content.suspects),
+    objectMap:
+      baselines.motiveObject === null
+        ? {}
+        : pickKeys(baselines.motiveObject, loadSharedMotives()),
   }
 }
 
 /**
- * A fresh save file: the full default role lists with their matrices
- * seeded from the shipped baselines.
+ * A fresh save file: shared lists plus every theme seeded from its shipped
+ * baselines.
  */
 export function loadDefaultConfig(): Config {
-  const roles = loadDefaultRoleLists()
-  const baselines = loadBaselines()
+  const themes = {} as Record<Theme, ThemeConfig>
+  for (const theme of THEMES) themes[theme] = defaultThemeConfig(theme)
   return {
-    suspects: roles.suspects,
-    truths: roles.truths,
-    motives: roles.motives,
-    locationMap: pickKeys(baselines.location, roles.suspects),
-    treacheryMap: pickKeys(baselines.treachery, roles.truths),
-    objectMap: pickKeys(baselines.object, roles.motives),
+    truths: loadSharedTruths(),
+    motives: loadSharedMotives(),
+    treacheries: loadSharedTreacheries(),
+    treacheryMap: pickKeys(loadSharedTreacheryBaseline(), loadSharedTruths()),
+    themes,
   }
 }
 
 function cloneMap(source: Record<string, string[]>): EligibilityMap {
   const out: EligibilityMap = {}
-  for (const [key, values] of Object.entries(source)) {
-    out[key] = [...values]
-  }
+  for (const [key, values] of Object.entries(source)) out[key] = [...values]
   return out
 }
 

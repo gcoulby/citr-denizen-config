@@ -14,7 +14,8 @@
     "Rival",
     "Secret document",
     "Group",
-    "Owner"
+    "Owner",
+    "Drug"
   ],
   "Revenge": [
     "Rival",
@@ -30,7 +31,8 @@
     "Criminal",
     "Investigation",
     "Prisoner",
-    "Interloper"
+    "Interloper",
+    "Key"
   ],
   "Debt": [
     "Money",
@@ -38,7 +40,8 @@
     "Paperwork",
     "Goods",
     "Owner",
-    "Vehicle"
+    "Vehicle",
+    "Medicine"
   ],
   "Love": [
     "Family",
@@ -46,7 +49,8 @@
     "Secret document",
     "Plant",
     "Community",
-    "Group"
+    "Group",
+    "Map"
   ],
   "Shame": [
     "Secret document",
@@ -62,7 +66,8 @@
     "Discovery",
     "Investigation",
     "Structure",
-    "Owner"
+    "Owner",
+    "Plant"
   ],
   "Loyalty": [
     "Community",
@@ -70,7 +75,8 @@
     "Group",
     "Officer",
     "Survivor",
-    "Resident"
+    "Resident",
+    "Map"
   ],
   "Desperation": [
     "Drug",
@@ -78,7 +84,8 @@
     "Money",
     "Disease",
     "Safe",
-    "Prisoner"
+    "Prisoner",
+    "Criminal"
   ],
   "Pride": [
     "Artefact",
@@ -94,7 +101,8 @@
     "Paperwork",
     "Evidence",
     "Owner",
-    "Key"
+    "Key",
+    "Plant"
   ],
   "Protection": [
     "Family",
@@ -110,7 +118,8 @@
     "Safe",
     "Paperwork",
     "Owner",
-    "Vehicle"
+    "Vehicle",
+    "Visitor"
   ],
   "Vendetta": [
     "Rival",
@@ -126,7 +135,8 @@
     "Structure",
     "Group",
     "Resident",
-    "Investigation"
+    "Investigation",
+    "Passerby"
   ],
   "Promise": [
     "Family",
@@ -142,7 +152,8 @@
     "Map",
     "Investigation",
     "Evidence",
-    "Reporter"
+    "Reporter",
+    "Medicine"
   ],
   "Justice": [
     "Criminal",
@@ -150,7 +161,8 @@
     "Witness",
     "Officer",
     "Prisoner",
-    "Investigation"
+    "Investigation",
+    "Drug"
   ],
   "Danger": [
     "Weapons",
@@ -158,7 +170,8 @@
     "Criminal",
     "Structure",
     "Interloper",
-    "Prisoner"
+    "Prisoner",
+    "Medicine"
   ],
   "Boredom": [
     "Vehicle",
@@ -166,7 +179,8 @@
     "Animal",
     "Visitor",
     "Passerby",
-    "Structure"
+    "Structure",
+    "Money"
   ],
   "Obsession": [
     "Photograph",
@@ -174,7 +188,8 @@
     "Rival",
     "Secret document",
     "Owner",
-    "Discovery"
+    "Discovery",
+    "Map"
   ],
   "Guilt": [
     "Survivor",
@@ -182,7 +197,8 @@
     "Photograph",
     "Evidence",
     "Witness",
-    "Prisoner"
+    "Prisoner",
+    "Key"
   ],
   "Validation": [
     "Discovery",
@@ -206,7 +222,8 @@
     "Artefact",
     "Structure",
     "Group",
-    "Resident"
+    "Resident",
+    "Passerby"
   ],
   "Reputation": [
     "Figurehead",
@@ -238,7 +255,8 @@
     "Structure",
     "Figurehead",
     "Owner",
-    "Paperwork"
+    "Paperwork",
+    "Reporter"
   ],
   "Freedom": [
     "Prisoner",
@@ -246,7 +264,8 @@
     "Key",
     "Survivor",
     "Interloper",
-    "Visitor"
+    "Visitor",
+    "Drug"
   ],
   "Hatred": [
     "Rival",
@@ -254,7 +273,8 @@
     "Family",
     "Weapons",
     "Officer",
-    "Witness"
+    "Witness",
+    "Key"
   ],
   "Connection": [
     "Family",
@@ -262,7 +282,8 @@
     "Group",
     "Photograph",
     "Resident",
-    "Visitor"
+    "Visitor",
+    "Money"
   ],
   "Calling": [
     "Discovery",
@@ -270,7 +291,8 @@
     "Community",
     "Structure",
     "Investigation",
-    "Group"
+    "Group",
+    "Animal"
   ],
   "Recklessness": [
     "Vehicle",
@@ -286,7 +308,8 @@
     "Rival",
     "Map",
     "Structure",
-    "Group"
+    "Group",
+    "Animal"
   ],
   "Completion": [
     "Discovery",
@@ -294,7 +317,8 @@
     "Investigation",
     "Paperwork",
     "Evidence",
-    "Owner"
+    "Owner",
+    "Animal"
   ],
   "Absence": [
     "Interloper",
@@ -302,7 +326,8 @@
     "Visitor",
     "Resident",
     "Survivor",
-    "Structure"
+    "Structure",
+    "Plant"
   ],
   "Curse": [
     "Structure",
@@ -310,7 +335,8 @@
     "Disease",
     "Prisoner",
     "Owner",
-    "Figurehead"
+    "Figurehead",
+    "Medicine"
   ],
   "Secrecy": [
     "Secret document",
@@ -326,7 +352,8 @@
     "Paperwork",
     "Investigation",
     "Evidence",
-    "Reporter"
+    "Reporter",
+    "Safe"
   ],
   "Power": [
     "Figurehead",
@@ -342,7 +369,8 @@
     "Prisoner",
     "Weapons",
     "Community",
-    "Owner"
+    "Owner",
+    "Money"
   ],
   "Status": [
     "Figurehead",
@@ -358,7 +386,8 @@
     "Prisoner",
     "Structure",
     "Visitor",
-    "Passerby"
+    "Passerby",
+    "Drug"
   ],
   "Belonging": [
     "Community",
@@ -366,7 +395,8 @@
     "Group",
     "Resident",
     "Survivor",
-    "Visitor"
+    "Visitor",
+    "Plant"
   ],
   "Redemption": [
     "Survivor",
@@ -390,7 +420,8 @@
     "Medicine",
     "Witness",
     "Disease",
-    "Community"
+    "Community",
+    "Map"
   ],
   "Sacrifice": [
     "Family",
@@ -414,7 +445,8 @@
     "Paperwork",
     "Structure",
     "Owner",
-    "Goods"
+    "Goods",
+    "Key"
   ],
   "Competition": [
     "Rival",
@@ -422,7 +454,8 @@
     "Discovery",
     "Group",
     "Structure",
-    "Officer"
+    "Officer",
+    "Animal"
   ],
   "Devotion": [
     "Family",
@@ -430,7 +463,8 @@
     "Figurehead",
     "Plant",
     "Group",
-    "Structure"
+    "Structure",
+    "Interloper"
   ],
   "Resentment": [
     "Rival",
@@ -446,7 +480,8 @@
     "Evidence",
     "Interloper",
     "Reporter",
-    "Passerby"
+    "Passerby",
+    "Visitor"
   ],
   "Compulsion": [
     "Drug",
@@ -454,7 +489,8 @@
     "Artefact",
     "Vehicle",
     "Goods",
-    "Owner"
+    "Owner",
+    "Animal"
   ],
   "Denial": [
     "Evidence",
@@ -462,7 +498,8 @@
     "Secret document",
     "Witness",
     "Investigation",
-    "Reporter"
+    "Reporter",
+    "Medicine"
   ],
   "Longing": [
     "Photograph",
@@ -470,7 +507,8 @@
     "Secret document",
     "Plant",
     "Community",
-    "Owner"
+    "Owner",
+    "Safe"
   ],
   "Vindication": [
     "Evidence",

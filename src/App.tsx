@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ResetButton } from '@/components/common/ResetButton'
 import { GeneratorPanel } from '@/components/generator/GeneratorPanel'
@@ -7,28 +7,53 @@ import { TabNav, type TabDef } from '@/components/layout/TabNav'
 import { EligibilityMatrix } from '@/components/matrix/EligibilityMatrix'
 import { RoleListEditor } from '@/components/lists/RoleListEditor'
 import { Tabs, TabsContent } from '@/components/ui/tabs'
-import { loadArcana, loadContextLists } from '@/data/loadDefaults'
+import { loadArcana } from '@/data/loadDefaults'
 import { useConfigStore } from '@/hooks/useConfigStore'
 import { usePreferences } from '@/hooks/usePreferences'
 import type { ContextField } from '@/components/generator/ContextSelectors'
+import { THEME_LABELS } from '@/types'
 
 const TABS: TabDef[] = [
   { value: 'suspects', label: 'Suspects' },
-  { value: 'locations', label: 'Suspect × Location' },
   { value: 'truths', label: 'Truths' },
-  { value: 'treacheries', label: 'Truth × Treachery' },
   { value: 'motives', label: 'Motives' },
-  { value: 'objects', label: 'Motive × Object' },
+  { value: 'treacheries', label: 'Treacheries' },
 ]
 
-export default function App() {
-  const store = useConfigStore()
-  const { preferences, status: prefStatus, setPreference } = usePreferences()
-  const contextLists = useMemo(loadContextLists, [])
-  const arcana = useMemo(loadArcana, [])
+const ARCANA = loadArcana()
 
-  const { config } = store
+export default function App() {
+  const { preferences, status: prefStatus, setPreference } = usePreferences()
+  const store = useConfigStore(preferences.theme)
+  const { config, resolved } = store
+  const [notice, setNotice] = useState<string | null>(null)
+
   const overallStatus = store.status === 'error' || prefStatus === 'error' ? 'error' : store.status
+
+  useEffect(() => {
+    if (preferences.location && !resolved.locations.includes(preferences.location)) {
+      setPreference('location', '')
+    }
+    if (preferences.object && !resolved.objects.includes(preferences.object)) {
+      setPreference('object', '')
+    }
+  }, [resolved.locations, resolved.objects, preferences.location, preferences.object, setPreference])
+
+  function handleAutofill() {
+    const summary = store.autofillFromBaseline()
+    const added =
+      summary.addedSuspects +
+      summary.addedTruths +
+      summary.addedMotives +
+      summary.addedTreacheries
+    const parts = [`Autofill complete — ${added} missing default${added === 1 ? '' : 's'} added.`]
+    if (summary.motiveObjectSkipped) {
+      parts.push(
+        `${THEME_LABELS[preferences.theme]} has no motive→object baseline yet, so the Motive × Object grid was left untouched.`,
+      )
+    }
+    setNotice(parts.join(' '))
+  }
 
   function handleContextChange(field: ContextField, value: string) {
     setPreference(field, value)
@@ -36,14 +61,24 @@ export default function App() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <Header onAutofill={() => void store.autofillFromBaseline()} status={overallStatus} />
+      <Header
+        theme={preferences.theme}
+        onThemeChange={(theme) => {
+          setNotice(null)
+          setPreference('theme', theme)
+        }}
+        onAutofill={handleAutofill}
+        status={overallStatus}
+        notice={notice}
+      />
 
       <div className="mb-10 rounded-sm border border-ink-soft/30 bg-paper-dark/40 p-5">
-        <h2 className="mb-4 font-display text-xl font-bold text-ink">Generator</h2>
+        <h2 className="mb-4 font-display text-xl font-bold text-ink">
+          Generator <span className="text-ink-soft">— {THEME_LABELS[preferences.theme]}</span>
+        </h2>
         <GeneratorPanel
-          config={config}
-          contextLists={contextLists}
-          arcana={arcana}
+          config={resolved}
+          arcana={ARCANA}
           mode={preferences.mode}
           location={preferences.location}
           object={preferences.object}
@@ -56,66 +91,67 @@ export default function App() {
       <Tabs value={preferences.activeTab} onValueChange={(value) => setPreference('activeTab', value)}>
         <TabNav tabs={TABS} />
 
-        <TabsContent value="suspects">
+        <TabsContent value="suspects" className="space-y-8">
           <RoleListEditor
             label="Suspects"
-            items={config.suspects}
+            items={resolved.suspects}
             onAdd={(name) => store.addRole('suspects', name)}
             onRename={(oldName, newName) => store.renameRole('suspects', oldName, newName)}
             onRemove={(name) => store.removeRole('suspects', name)}
           />
-        </TabsContent>
-
-        <TabsContent value="locations">
           <EligibilityMatrix
             roleLabel="Suspect"
             contextLabel="Location"
-            roles={config.suspects}
-            contexts={contextLists.locations}
-            isChecked={(role, context) => (config.locationMap[role] ?? []).includes(context)}
+            roles={resolved.suspects}
+            contexts={resolved.locations}
+            isChecked={(role, context) => (config.themes[preferences.theme].locationMap[role] ?? []).includes(context)}
             onToggle={(role, context) => store.toggleCell('location', role, context)}
           />
         </TabsContent>
 
-        <TabsContent value="truths">
+        <TabsContent value="truths" className="space-y-8">
           <RoleListEditor
             label="Truths"
-            items={config.truths}
+            items={resolved.truths}
             onAdd={(name) => store.addRole('truths', name)}
             onRename={(oldName, newName) => store.renameRole('truths', oldName, newName)}
             onRemove={(name) => store.removeRole('truths', name)}
           />
-        </TabsContent>
-
-        <TabsContent value="treacheries">
           <EligibilityMatrix
             roleLabel="Truth"
             contextLabel="Treachery"
-            roles={config.truths}
-            contexts={contextLists.treacheries}
+            roles={resolved.truths}
+            contexts={resolved.treacheries}
             isChecked={(role, context) => (config.treacheryMap[role] ?? []).includes(context)}
             onToggle={(role, context) => store.toggleCell('treachery', role, context)}
           />
         </TabsContent>
 
-        <TabsContent value="motives">
+        <TabsContent value="motives" className="space-y-8">
           <RoleListEditor
             label="Motives"
-            items={config.motives}
+            items={resolved.motives}
             onAdd={(name) => store.addRole('motives', name)}
             onRename={(oldName, newName) => store.renameRole('motives', oldName, newName)}
             onRemove={(name) => store.removeRole('motives', name)}
           />
-        </TabsContent>
-
-        <TabsContent value="objects">
           <EligibilityMatrix
             roleLabel="Motive"
             contextLabel="Object"
-            roles={config.motives}
-            contexts={contextLists.objects}
-            isChecked={(role, context) => (config.objectMap[role] ?? []).includes(context)}
+            roles={resolved.motives}
+            contexts={resolved.objects}
+            isChecked={(role, context) => (config.themes[preferences.theme].objectMap[role] ?? []).includes(context)}
             onToggle={(role, context) => store.toggleCell('object', role, context)}
+          />
+        </TabsContent>
+
+        <TabsContent value="treacheries">
+          <RoleListEditor
+            label="Treacheries"
+            items={resolved.treacheries}
+            onAdd={(name) => store.addRole('treacheries', name)}
+            onRename={(oldName, newName) => store.renameRole('treacheries', oldName, newName)}
+            onRemove={(name) => store.removeRole('treacheries', name)}
           />
         </TabsContent>
       </Tabs>

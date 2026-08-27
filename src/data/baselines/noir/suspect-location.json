@@ -132,7 +132,8 @@
     "Hotel",
     "Restaurant",
     "Café",
-    "Amusement park"
+    "Amusement park",
+    "Zoo"
   ],
   "Bouncer": [
     "Pub",
@@ -140,7 +141,8 @@
     "Amusement park",
     "Gym",
     "Stadium",
-    "Warehouse"
+    "Warehouse",
+    "Zoo"
   ],
   "Chauffeur": [
     "Car park",
@@ -278,7 +280,9 @@
     "Gallery",
     "Warehouse",
     "University",
-    "Storage unit"
+    "Storage unit",
+    "Prison",
+    "Police station"
   ],
   "Professor": [
     "University",
@@ -323,7 +327,8 @@
     "Warehouse",
     "Storage unit",
     "Basement",
-    "Church"
+    "Church",
+    "Beach"
   ],
   "Artist": [
     "Gallery",
@@ -340,7 +345,8 @@
     "Park",
     "Beach",
     "Amusement park",
-    "Car park"
+    "Car park",
+    "Zoo"
   ],
   "Author": [
     "Café",
@@ -356,7 +362,9 @@
     "Café",
     "Home",
     "Pub",
-    "Train station"
+    "Train station",
+    "Prison",
+    "Beach"
   ],
   "Bodyguard": [
     "Casino",
@@ -382,7 +390,9 @@
     "Backyard",
     "Hotel",
     "Church",
-    "Apartment"
+    "Apartment",
+    "Prison",
+    "Zoo"
   ],
   "Caretaker": [
     "Home",
@@ -399,7 +409,8 @@
     "Café",
     "Home",
     "Pub",
-    "Amusement park"
+    "Amusement park",
+    "Zoo"
   ],
   "Clerk": [
     "Bank",
@@ -416,7 +427,8 @@
     "Park",
     "University",
     "Amusement park",
-    "Beach"
+    "Beach",
+    "Zoo"
   ],
   "Collector": [
     "Gallery",
@@ -424,7 +436,8 @@
     "Storage unit",
     "Warehouse",
     "Pier",
-    "Apartment"
+    "Apartment",
+    "Gas station"
   ],
   "Contractor": [
     "Factory",
@@ -441,7 +454,8 @@
     "Car park",
     "Pier",
     "Alleyway",
-    "Warehouse"
+    "Warehouse",
+    "Gas station"
   ],
   "Dealer": [
     "Casino",
@@ -466,7 +480,9 @@
     "Bank",
     "Home",
     "Church",
-    "Apartment"
+    "Apartment",
+    "Prison",
+    "Morgue"
   ],
   "Farmer": [
     "Backyard",
@@ -474,7 +490,8 @@
     "Gas station",
     "Storage unit",
     "Zoo",
-    "Warehouse"
+    "Warehouse",
+    "Morgue"
   ],
   "Fence": [
     "Alleyway",
@@ -500,14 +517,17 @@
     "Storage unit",
     "Warehouse",
     "Café",
-    "Museum"
+    "Museum",
+    "Morgue"
   ],
   "Foreman": [
     "Factory",
     "Warehouse",
     "Gas station",
     "Car park",
-    "Storage unit"
+    "Storage unit",
+    "Boat",
+    "Morgue"
   ],
   "Handyman": [
     "Home",
@@ -515,21 +535,25 @@
     "Backyard",
     "Apartment",
     "Factory",
-    "Warehouse"
+    "Warehouse",
+    "Gym"
   ],
   "Historian": [
     "University",
     "Museum",
     "Gallery",
     "Church",
-    "Courthouse"
+    "Courthouse",
+    "Boat",
+    "Pier"
   ],
   "Housekeeper": [
     "Home",
     "Hotel",
     "Apartment",
     "Backyard",
-    "Church"
+    "Church",
+    "Boat"
   ],
   "Inspector": [
     "Police station",
@@ -555,6 +579,7 @@
     "Museum",
     "Home",
     "Café",
-    "Church"
+    "Church",
+    "Abandoned building"
   ]
 }

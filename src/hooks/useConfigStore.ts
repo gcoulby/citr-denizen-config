@@ -1,55 +1,42 @@
 import { useCallback, useMemo } from 'react'
 
-import { loadBaselines, loadDefaultConfig, loadDefaultRoleLists } from '@/data/loadDefaults'
+import {
+  loadDefaultConfig,
+  loadSharedMotives,
+  loadSharedTreacheries,
+  loadSharedTreacheryBaseline,
+  loadSharedTruths,
+  loadThemeBaselines,
+  loadThemeContent,
+} from '@/data/loadDefaults'
 import { usePersistentState } from '@/hooks/usePersistentState'
-import type { Axis, Config, EligibilityMap, RoleAxis, SaveStatus } from '@/types'
+import { resolveConfig } from '@/lib/resolveConfig'
+import type { Axis, Config, EligibilityMap, ResolvedConfig, SaveStatus, Theme, ThemeConfig } from '@/types'
+import { THEMES } from '@/types'
 
-const STORAGE_KEY = 'noir-config-v1'
+const STORAGE_KEY = 'citr-config-v1'
 
-interface AxisWiring {
-  roleAxis: RoleAxis
-  mapKey: 'locationMap' | 'treacheryMap' | 'objectMap'
-  baseline: 'location' | 'treachery' | 'object'
-}
-
-const AXIS_WIRING: Record<Axis, AxisWiring> = {
-  location: { roleAxis: 'suspects', mapKey: 'locationMap', baseline: 'location' },
-  treachery: { roleAxis: 'truths', mapKey: 'treacheryMap', baseline: 'treachery' },
-  object: { roleAxis: 'motives', mapKey: 'objectMap', baseline: 'object' },
-}
-
-const ROLE_TO_AXIS: Record<RoleAxis, Axis> = {
-  suspects: 'location',
-  truths: 'treachery',
-  motives: 'object',
-}
+export type EditableList = 'suspects' | 'truths' | 'motives' | 'treacheries'
 
 export interface AutofillSummary {
   addedSuspects: number
   addedTruths: number
   addedMotives: number
+  addedTreacheries: number
+  motiveObjectSkipped: boolean
 }
 
 export interface UseConfigStore {
   config: Config
+  resolved: ResolvedConfig
   status: SaveStatus
-  addRole(axis: RoleAxis, name: string): void
-  renameRole(axis: RoleAxis, oldName: string, newName: string): void
-  removeRole(axis: RoleAxis, name: string): void
+  theme: Theme
+  addRole(list: EditableList, name: string): void
+  renameRole(list: EditableList, oldName: string, newName: string): void
+  removeRole(list: EditableList, name: string): void
   toggleCell(axis: Axis, role: string, context: string): void
   autofillFromBaseline(): AutofillSummary
   resetAll(): void
-}
-
-function cloneConfig(config: Config): Config {
-  return {
-    suspects: [...config.suspects],
-    truths: [...config.truths],
-    motives: [...config.motives],
-    locationMap: cloneMap(config.locationMap),
-    treacheryMap: cloneMap(config.treacheryMap),
-    objectMap: cloneMap(config.objectMap),
-  }
 }
 
 function cloneMap(map: EligibilityMap): EligibilityMap {
@@ -58,115 +45,211 @@ function cloneMap(map: EligibilityMap): EligibilityMap {
   return out
 }
 
-function withDefaults(stored: Config): Config {
-  const base = loadDefaultConfig()
-  return { ...base, ...stored }
+function cloneThemeConfig(theme: ThemeConfig): ThemeConfig {
+  return {
+    suspects: [...theme.suspects],
+    locationMap: cloneMap(theme.locationMap),
+    objectMap: cloneMap(theme.objectMap),
+  }
 }
 
-export function useConfigStore(): UseConfigStore {
+function cloneConfig(config: Config): Config {
+  const themes = {} as Record<Theme, ThemeConfig>
+  for (const theme of THEMES) themes[theme] = cloneThemeConfig(config.themes[theme])
+  return {
+    truths: [...config.truths],
+    motives: [...config.motives],
+    treacheries: [...config.treacheries],
+    treacheryMap: cloneMap(config.treacheryMap),
+    themes,
+  }
+}
+
+function withDefaults(stored: Config): Config {
+  const base = loadDefaultConfig()
+  const themes = {} as Record<Theme, ThemeConfig>
+  for (const theme of THEMES) {
+    themes[theme] = { ...base.themes[theme], ...stored.themes?.[theme] }
+  }
+  return { ...base, ...stored, themes }
+}
+
+function renameKey(map: EligibilityMap, oldName: string, newName: string): void {
+  if (!(oldName in map)) return
+  map[newName] = map[oldName] ?? []
+  delete map[oldName]
+}
+
+function renameValue(map: EligibilityMap, oldValue: string, newValue: string): void {
+  for (const key of Object.keys(map)) {
+    map[key] = (map[key] ?? []).map((value) => (value === oldValue ? newValue : value))
+  }
+}
+
+function removeValue(map: EligibilityMap, value: string): void {
+  for (const key of Object.keys(map)) {
+    map[key] = (map[key] ?? []).filter((entry) => entry !== value)
+  }
+}
+
+export function useConfigStore(theme: Theme): UseConfigStore {
   const { value: config, setValue, status } = usePersistentState<Config>(
     STORAGE_KEY,
     loadDefaultConfig,
     withDefaults,
   )
 
+  const resolved = useMemo(() => resolveConfig(config, theme), [config, theme])
+
   const addRole = useCallback(
-    (axis: RoleAxis, rawName: string) => {
+    (list: EditableList, rawName: string) => {
       const name = rawName.trim()
       if (name === '') return
       setValue((prev) => {
-        if (prev[axis].includes(name)) return prev
         const next = cloneConfig(prev)
-        next[axis] = [...next[axis], name]
-        const { mapKey } = AXIS_WIRING[ROLE_TO_AXIS[axis]]
-        if (!next[mapKey][name]) next[mapKey][name] = []
+        if (list === 'suspects') {
+          if (next.themes[theme].suspects.includes(name)) return prev
+          next.themes[theme].suspects = [...next.themes[theme].suspects, name]
+          if (!next.themes[theme].locationMap[name]) next.themes[theme].locationMap[name] = []
+        } else {
+          if (next[list].includes(name)) return prev
+          next[list] = [...next[list], name]
+          if (list === 'truths' && !next.treacheryMap[name]) next.treacheryMap[name] = []
+          if (list === 'motives') {
+            for (const t of THEMES) {
+              if (!next.themes[t].objectMap[name]) next.themes[t].objectMap[name] = []
+            }
+          }
+        }
         return next
       })
     },
-    [setValue],
+    [setValue, theme],
   )
 
   const renameRole = useCallback(
-    (axis: RoleAxis, oldName: string, rawNewName: string) => {
+    (list: EditableList, oldName: string, rawNewName: string) => {
       const newName = rawNewName.trim()
       if (newName === '' || newName === oldName) return
       setValue((prev) => {
-        if (!prev[axis].includes(oldName) || prev[axis].includes(newName)) return prev
+        const source = list === 'suspects' ? prev.themes[theme].suspects : prev[list]
+        if (!source.includes(oldName) || source.includes(newName)) return prev
         const next = cloneConfig(prev)
-        next[axis] = next[axis].map((role) => (role === oldName ? newName : role))
-        const { mapKey } = AXIS_WIRING[ROLE_TO_AXIS[axis]]
-        const map = next[mapKey]
-        map[newName] = map[oldName] ?? []
-        delete map[oldName]
+        switch (list) {
+          case 'suspects':
+            next.themes[theme].suspects = next.themes[theme].suspects.map((s) =>
+              s === oldName ? newName : s,
+            )
+            renameKey(next.themes[theme].locationMap, oldName, newName)
+            break
+          case 'truths':
+            next.truths = next.truths.map((v) => (v === oldName ? newName : v))
+            renameKey(next.treacheryMap, oldName, newName)
+            break
+          case 'motives':
+            next.motives = next.motives.map((v) => (v === oldName ? newName : v))
+            for (const t of THEMES) renameKey(next.themes[t].objectMap, oldName, newName)
+            break
+          case 'treacheries':
+            next.treacheries = next.treacheries.map((v) => (v === oldName ? newName : v))
+            renameValue(next.treacheryMap, oldName, newName)
+            break
+        }
         return next
       })
     },
-    [setValue],
+    [setValue, theme],
   )
 
   const removeRole = useCallback(
-    (axis: RoleAxis, name: string) => {
+    (list: EditableList, name: string) => {
       setValue((prev) => {
-        if (!prev[axis].includes(name)) return prev
+        const source = list === 'suspects' ? prev.themes[theme].suspects : prev[list]
+        if (!source.includes(name)) return prev
         const next = cloneConfig(prev)
-        next[axis] = next[axis].filter((role) => role !== name)
-        const { mapKey } = AXIS_WIRING[ROLE_TO_AXIS[axis]]
-        delete next[mapKey][name]
+        switch (list) {
+          case 'suspects':
+            next.themes[theme].suspects = next.themes[theme].suspects.filter((s) => s !== name)
+            delete next.themes[theme].locationMap[name]
+            break
+          case 'truths':
+            next.truths = next.truths.filter((v) => v !== name)
+            delete next.treacheryMap[name]
+            break
+          case 'motives':
+            next.motives = next.motives.filter((v) => v !== name)
+            for (const t of THEMES) delete next.themes[t].objectMap[name]
+            break
+          case 'treacheries':
+            next.treacheries = next.treacheries.filter((v) => v !== name)
+            removeValue(next.treacheryMap, name)
+            break
+        }
         return next
       })
     },
-    [setValue],
+    [setValue, theme],
   )
 
   const toggleCell = useCallback(
     (axis: Axis, role: string, context: string) => {
       setValue((prev) => {
         const next = cloneConfig(prev)
-        const { mapKey } = AXIS_WIRING[axis]
-        const current = next[mapKey][role] ?? []
-        next[mapKey][role] = current.includes(context)
+        const map =
+          axis === 'location'
+            ? next.themes[theme].locationMap
+            : axis === 'object'
+              ? next.themes[theme].objectMap
+              : next.treacheryMap
+        const current = map[role] ?? []
+        map[role] = current.includes(context)
           ? current.filter((value) => value !== context)
           : [...current, context]
         return next
       })
     },
-    [setValue],
+    [setValue, theme],
   )
 
   const autofillFromBaseline = useCallback((): AutofillSummary => {
-    const defaults = loadDefaultRoleLists()
-    const baselines = loadBaselines()
-    const axes: Array<[RoleAxis, keyof AutofillSummary]> = [
-      ['suspects', 'addedSuspects'],
-      ['truths', 'addedTruths'],
-      ['motives', 'addedMotives'],
-    ]
+    const defaultSuspects = loadThemeContent(theme).suspects
+    const defaultTruths = loadSharedTruths()
+    const defaultMotives = loadSharedMotives()
+    const defaultTreacheries = loadSharedTreacheries()
+    const themeBaselines = loadThemeBaselines(theme)
+    const treacheryBaseline = loadSharedTreacheryBaseline()
 
     const next = cloneConfig(config)
-    const summary: AutofillSummary = { addedSuspects: 0, addedTruths: 0, addedMotives: 0 }
+    const summary: AutofillSummary = {
+      addedSuspects: 0,
+      addedTruths: 0,
+      addedMotives: 0,
+      addedTreacheries: 0,
+      motiveObjectSkipped: themeBaselines.motiveObject === null,
+    }
 
-    for (const [roleAxis, counter] of axes) {
-      const { mapKey, baseline } = AXIS_WIRING[ROLE_TO_AXIS[roleAxis]]
-      const present = new Set(next[roleAxis])
-      for (const role of defaults[roleAxis]) {
-        if (!present.has(role)) {
-          next[roleAxis] = [...next[roleAxis], role]
-          present.add(role)
-          summary[counter] += 1
-        }
-      }
-      for (const role of next[roleAxis]) {
-        const seeds = baselines[baseline][role]
-        if (!seeds) continue
-        const merged = new Set(next[mapKey][role] ?? [])
-        for (const seed of seeds) merged.add(seed)
-        next[mapKey][role] = [...merged]
-      }
+    summary.addedSuspects = appendMissing(next.themes[theme].suspects, defaultSuspects, (list) => {
+      next.themes[theme].suspects = list
+    })
+    summary.addedTruths = appendMissing(next.truths, defaultTruths, (list) => {
+      next.truths = list
+    })
+    summary.addedMotives = appendMissing(next.motives, defaultMotives, (list) => {
+      next.motives = list
+    })
+    summary.addedTreacheries = appendMissing(next.treacheries, defaultTreacheries, (list) => {
+      next.treacheries = list
+    })
+
+    mergeSeeds(next.themes[theme].locationMap, themeBaselines.suspectLocation, next.themes[theme].suspects)
+    mergeSeeds(next.treacheryMap, treacheryBaseline, next.truths)
+    if (themeBaselines.motiveObject !== null) {
+      mergeSeeds(next.themes[theme].objectMap, themeBaselines.motiveObject, next.motives)
     }
 
     setValue(next)
     return summary
-  }, [config, setValue])
+  }, [config, setValue, theme])
 
   const resetAll = useCallback(() => {
     setValue(loadDefaultConfig())
@@ -175,7 +258,9 @@ export function useConfigStore(): UseConfigStore {
   return useMemo(
     () => ({
       config,
+      resolved,
       status,
+      theme,
       addRole,
       renameRole,
       removeRole,
@@ -183,6 +268,23 @@ export function useConfigStore(): UseConfigStore {
       autofillFromBaseline,
       resetAll,
     }),
-    [config, status, addRole, renameRole, removeRole, toggleCell, autofillFromBaseline, resetAll],
+    [config, resolved, status, theme, addRole, renameRole, removeRole, toggleCell, autofillFromBaseline, resetAll],
   )
+}
+
+function appendMissing(current: string[], defaults: string[], commit: (list: string[]) => void): number {
+  const present = new Set(current)
+  const additions = defaults.filter((item) => !present.has(item))
+  if (additions.length > 0) commit([...current, ...additions])
+  return additions.length
+}
+
+function mergeSeeds(map: EligibilityMap, baseline: EligibilityMap, roles: string[]): void {
+  for (const role of roles) {
+    const seeds = baseline[role]
+    if (!seeds) continue
+    const merged = new Set(map[role] ?? [])
+    for (const seed of seeds) merged.add(seed)
+    map[role] = [...merged]
+  }
 }

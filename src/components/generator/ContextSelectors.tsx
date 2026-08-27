@@ -21,21 +21,44 @@ interface ContextSelectorsProps {
 }
 
 export function ContextSelectors(props: ContextSelectorsProps) {
-  const rows: Array<{ field: ContextField; label: string; value: string; options: string[] }> = [
-    { field: 'location', label: 'Location', value: props.location, options: props.locations },
-    { field: 'object', label: 'Object', value: props.object, options: props.objects },
-    { field: 'treachery', label: 'Treachery', value: props.treachery, options: props.treacheries },
+  const rows: Array<{
+    field: ContextField
+    label: string
+    value: string
+    options: string[]
+  }> = [
+    {
+      field: 'location',
+      label: 'Location',
+      value: props.location,
+      options: props.locations,
+    },
+    {
+      field: 'object',
+      label: 'Object',
+      value: props.object,
+      options: props.objects,
+    },
+    {
+      field: 'treachery',
+      label: 'Treachery',
+      value: props.treachery,
+      options: props.treacheries,
+    },
   ]
 
   return (
-    <div className="grid gap-3 sm:grid-cols-3">
+    <div className="gap-3 grid sm:grid-cols-3">
       {rows.map(({ field, label, value, options }) => (
         <div key={field}>
-          <label className="mb-1 block font-body text-xs font-semibold uppercase tracking-wide text-ink-soft">
+          <label className="block mb-1 font-body font-semibold text-ink-soft text-xs uppercase tracking-wide">
             {label}
           </label>
           <div className="flex gap-2">
-            <Select value={value || undefined} onValueChange={(next) => props.onChange(field, next)}>
+            <Select
+              value={value || undefined}
+              onValueChange={(next) => props.onChange(field, next)}
+            >
               <SelectTrigger>
                 <SelectValue placeholder={`Choose ${label.toLowerCase()}`} />
               </SelectTrigger>
@@ -50,7 +73,7 @@ export function ContextSelectors(props: ContextSelectorsProps) {
             <Button
               type="button"
               variant="outline"
-              size="sm"
+              // size="md"
               onClick={() => props.onRoll(field)}
               aria-label={`Roll ${label}`}
             >
