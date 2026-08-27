@@ -1,0 +1,77 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+import { SUITS } from '@/data/suits'
+import type { ArcanaGroups, GeneratedTable } from '@/types'
+
+interface ResultTableProps {
+  table: GeneratedTable
+  arcana: ArcanaGroups
+}
+
+interface Column {
+  heading: string
+  values: string[]
+  labels: string[]
+}
+
+export function ResultTable({ table, arcana }: ResultTableProps) {
+  const isTarot = table.mode === 'tarot'
+  const rowCount = table.suspects.values.length
+
+  const suitLabels = SUITS.map((suit) => `${suit.symbol} ${suit.name}`)
+  const rankColumn = isTarot
+    ? Array.from({ length: rowCount }, (_, index) => `Card ${index + 1}`)
+    : suitLabels
+
+  const columns: Column[] = [
+    {
+      heading: 'Suspect',
+      values: table.suspects.values,
+      labels: isTarot ? arcana.suspect : suitLabels,
+    },
+    {
+      heading: 'Truth',
+      values: table.truths.values,
+      labels: isTarot ? arcana.truth : suitLabels,
+    },
+    {
+      heading: 'Motive',
+      values: table.motives.values,
+      labels: isTarot ? arcana.motive : suitLabels,
+    },
+  ]
+
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>{isTarot ? 'Draw' : 'Suit'}</TableHead>
+          {columns.map((column) => (
+            <TableHead key={column.heading}>{column.heading}</TableHead>
+          ))}
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {Array.from({ length: rowCount }, (_, row) => (
+          <TableRow key={row}>
+            <TableCell className="font-body text-ink-soft">{rankColumn[row]}</TableCell>
+            {columns.map((column) => (
+              <TableCell key={column.heading}>
+                <span className="font-semibold text-ink">{column.values[row]}</span>
+                {isTarot && (
+                  <span className="block font-body text-xs text-ink-soft">{column.labels[row]}</span>
+                )}
+              </TableCell>
+            ))}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  )
+}

@@ -1,0 +1,560 @@
+{
+  "CEO": [
+    "Bank",
+    "Hotel",
+    "Casino",
+    "Restaurant",
+    "Boat",
+    "Airport",
+    "Gallery",
+    "Courthouse",
+    "Shopping centre",
+    "Museum",
+    "Stadium",
+    "Car park"
+  ],
+  "Banker": [
+    "Bank",
+    "Hotel",
+    "Restaurant",
+    "Courthouse",
+    "Casino",
+    "Car park",
+    "Apartment",
+    "Shopping centre",
+    "Museum",
+    "Gallery"
+  ],
+  "Cashier": [
+    "Bank",
+    "Shopping centre",
+    "Gas station",
+    "Café",
+    "Restaurant",
+    "Casino",
+    "Train station",
+    "Apartment"
+  ],
+  "Spouse": [
+    "Home",
+    "Apartment",
+    "Backyard",
+    "Restaurant",
+    "Pub",
+    "Beach",
+    "Car park",
+    "Church",
+    "Gallery",
+    "Park",
+    "Shopping centre",
+    "Café"
+  ],
+  "Ex-Lover": [
+    "Apartment",
+    "Hotel",
+    "Pub",
+    "Beach",
+    "Park",
+    "Café",
+    "Restaurant",
+    "Train station",
+    "Car park",
+    "Gallery"
+  ],
+  "Doctor": [
+    "Morgue",
+    "University",
+    "Home",
+    "Prison",
+    "Police station",
+    "Church",
+    "Apartment",
+    "Gym"
+  ],
+  "Nurse": [
+    "Morgue",
+    "Home",
+    "Prison",
+    "University",
+    "Church",
+    "Apartment",
+    "Gym",
+    "Police station"
+  ],
+  "Judge": [
+    "Courthouse",
+    "Home",
+    "Church",
+    "Restaurant",
+    "Gallery",
+    "University",
+    "Bank",
+    "Museum"
+  ],
+  "Detective": [
+    "Police station",
+    "Alleyway",
+    "Morgue",
+    "Pub",
+    "Warehouse",
+    "Basement",
+    "Car park",
+    "Train station",
+    "Abandoned building",
+    "Storage unit"
+  ],
+  "Blackmailer": [
+    "Alleyway",
+    "Basement",
+    "Storage unit",
+    "Hotel",
+    "Warehouse",
+    "Apartment",
+    "Pier",
+    "Abandoned building",
+    "Car park"
+  ],
+  "Manager": [
+    "Hotel",
+    "Restaurant",
+    "Factory",
+    "Warehouse",
+    "Shopping centre",
+    "Casino",
+    "Gym",
+    "Amusement park",
+    "Bank",
+    "Car park"
+  ],
+  "Bartender": [
+    "Pub",
+    "Casino",
+    "Hotel",
+    "Restaurant",
+    "Café",
+    "Amusement park"
+  ],
+  "Bouncer": [
+    "Pub",
+    "Casino",
+    "Amusement park",
+    "Gym",
+    "Stadium",
+    "Warehouse"
+  ],
+  "Chauffeur": [
+    "Car park",
+    "Airport",
+    "Hotel",
+    "Home",
+    "Boat",
+    "Casino",
+    "Restaurant",
+    "Apartment"
+  ],
+  "Reporter": [
+    "Café",
+    "Courthouse",
+    "Police station",
+    "University",
+    "Bank",
+    "Museum",
+    "Gallery",
+    "Train station",
+    "Hotel",
+    "Apartment"
+  ],
+  "Official": [
+    "Courthouse",
+    "Bank",
+    "Church",
+    "University",
+    "Gallery",
+    "Museum",
+    "Restaurant",
+    "Airport",
+    "Hotel",
+    "Park"
+  ],
+  "Priest": [
+    "Church",
+    "Home",
+    "Prison",
+    "Morgue",
+    "Backyard",
+    "University",
+    "Park"
+  ],
+  "Landlord": [
+    "Apartment",
+    "Home",
+    "Basement",
+    "Storage unit",
+    "Car park",
+    "Backyard",
+    "Warehouse",
+    "Shopping centre"
+  ],
+  "Mechanic": [
+    "Gas station",
+    "Car park",
+    "Factory",
+    "Warehouse",
+    "Airport",
+    "Boat"
+  ],
+  "Pawnbroker": [
+    "Storage unit",
+    "Shopping centre",
+    "Alleyway",
+    "Basement",
+    "Pier",
+    "Warehouse",
+    "Apartment"
+  ],
+  "Smuggler": [
+    "Boat",
+    "Pier",
+    "Warehouse",
+    "Airport",
+    "Storage unit",
+    "Alleyway",
+    "Abandoned building",
+    "Gas station"
+  ],
+  "Bookkeeper": [
+    "Bank",
+    "Factory",
+    "Warehouse",
+    "Shopping centre",
+    "Casino",
+    "Courthouse",
+    "Apartment"
+  ],
+  "Beneficiary": [
+    "Gallery",
+    "Museum",
+    "Hotel",
+    "Boat",
+    "Beach",
+    "Home",
+    "Casino",
+    "Bank",
+    "Restaurant"
+  ],
+  "Gambler": [
+    "Casino",
+    "Pub",
+    "Bank",
+    "Stadium",
+    "Amusement park",
+    "Hotel",
+    "Car park"
+  ],
+  "Informant": [
+    "Alleyway",
+    "Pub",
+    "Train station",
+    "Police station",
+    "Café",
+    "Park",
+    "Abandoned building",
+    "Basement"
+  ],
+  "Security guard": [
+    "Bank",
+    "Museum",
+    "Gallery",
+    "Factory",
+    "Warehouse",
+    "Casino",
+    "Stadium",
+    "Airport",
+    "Storage unit",
+    "Shopping centre"
+  ],
+  "Curator": [
+    "Museum",
+    "Gallery",
+    "Warehouse",
+    "University",
+    "Storage unit"
+  ],
+  "Professor": [
+    "University",
+    "Museum",
+    "Gallery",
+    "Home",
+    "Café",
+    "Church"
+  ],
+  "Student": [
+    "University",
+    "Café",
+    "Apartment",
+    "Gym",
+    "Park",
+    "Train station",
+    "Pub",
+    "Shopping centre"
+  ],
+  "Accountant": [
+    "Bank",
+    "Factory",
+    "Warehouse",
+    "Shopping centre",
+    "Courthouse",
+    "Apartment",
+    "Casino"
+  ],
+  "Actor": [
+    "Gallery",
+    "Museum",
+    "Hotel",
+    "Restaurant",
+    "Amusement park",
+    "Stadium",
+    "Café",
+    "Apartment"
+  ],
+  "Archivist": [
+    "Museum",
+    "University",
+    "Warehouse",
+    "Storage unit",
+    "Basement",
+    "Church"
+  ],
+  "Artist": [
+    "Gallery",
+    "Museum",
+    "Apartment",
+    "Park",
+    "Café",
+    "Beach",
+    "Pier"
+  ],
+  "Athlete": [
+    "Gym",
+    "Stadium",
+    "Park",
+    "Beach",
+    "Amusement park",
+    "Car park"
+  ],
+  "Author": [
+    "Café",
+    "Home",
+    "University",
+    "Museum",
+    "Apartment",
+    "Park",
+    "Gallery"
+  ],
+  "Barber": [
+    "Shopping centre",
+    "Café",
+    "Home",
+    "Pub",
+    "Train station"
+  ],
+  "Bodyguard": [
+    "Casino",
+    "Hotel",
+    "Bank",
+    "Airport",
+    "Courthouse",
+    "Stadium",
+    "Restaurant",
+    "Apartment"
+  ],
+  "Broker": [
+    "Bank",
+    "Hotel",
+    "Restaurant",
+    "Casino",
+    "Courthouse",
+    "Shopping centre",
+    "Apartment"
+  ],
+  "Butler": [
+    "Home",
+    "Backyard",
+    "Hotel",
+    "Church",
+    "Apartment"
+  ],
+  "Caretaker": [
+    "Home",
+    "Church",
+    "Park",
+    "Backyard",
+    "Apartment",
+    "Prison",
+    "Zoo"
+  ],
+  "Chef": [
+    "Restaurant",
+    "Hotel",
+    "Café",
+    "Home",
+    "Pub",
+    "Amusement park"
+  ],
+  "Clerk": [
+    "Bank",
+    "Courthouse",
+    "Police station",
+    "Shopping centre",
+    "Hotel",
+    "Train station",
+    "Apartment"
+  ],
+  "Coach": [
+    "Gym",
+    "Stadium",
+    "Park",
+    "University",
+    "Amusement park",
+    "Beach"
+  ],
+  "Collector": [
+    "Gallery",
+    "Museum",
+    "Storage unit",
+    "Warehouse",
+    "Pier",
+    "Apartment"
+  ],
+  "Contractor": [
+    "Factory",
+    "Warehouse",
+    "Car park",
+    "Basement",
+    "Backyard",
+    "Home",
+    "Storage unit"
+  ],
+  "Courier": [
+    "Train station",
+    "Airport",
+    "Car park",
+    "Pier",
+    "Alleyway",
+    "Warehouse"
+  ],
+  "Dealer": [
+    "Casino",
+    "Alleyway",
+    "Pub",
+    "Warehouse",
+    "Storage unit",
+    "Abandoned building",
+    "Car park"
+  ],
+  "Director": [
+    "Gallery",
+    "Museum",
+    "Hotel",
+    "Restaurant",
+    "Casino",
+    "Stadium",
+    "Amusement park"
+  ],
+  "Executor": [
+    "Courthouse",
+    "Bank",
+    "Home",
+    "Church",
+    "Apartment"
+  ],
+  "Farmer": [
+    "Backyard",
+    "Park",
+    "Gas station",
+    "Storage unit",
+    "Zoo",
+    "Warehouse"
+  ],
+  "Fence": [
+    "Alleyway",
+    "Storage unit",
+    "Warehouse",
+    "Basement",
+    "Pier",
+    "Abandoned building",
+    "Shopping centre"
+  ],
+  "Fixer": [
+    "Alleyway",
+    "Casino",
+    "Warehouse",
+    "Pub",
+    "Car park",
+    "Basement",
+    "Abandoned building"
+  ],
+  "Forger": [
+    "Basement",
+    "Apartment",
+    "Storage unit",
+    "Warehouse",
+    "Café",
+    "Museum"
+  ],
+  "Foreman": [
+    "Factory",
+    "Warehouse",
+    "Gas station",
+    "Car park",
+    "Storage unit"
+  ],
+  "Handyman": [
+    "Home",
+    "Basement",
+    "Backyard",
+    "Apartment",
+    "Factory",
+    "Warehouse"
+  ],
+  "Historian": [
+    "University",
+    "Museum",
+    "Gallery",
+    "Church",
+    "Courthouse"
+  ],
+  "Housekeeper": [
+    "Home",
+    "Hotel",
+    "Apartment",
+    "Backyard",
+    "Church"
+  ],
+  "Inspector": [
+    "Police station",
+    "Courthouse",
+    "Factory",
+    "Warehouse",
+    "Restaurant",
+    "Hotel",
+    "Bank",
+    "Gas station"
+  ],
+  "Investor": [
+    "Bank",
+    "Casino",
+    "Hotel",
+    "Restaurant",
+    "Courthouse",
+    "Gallery",
+    "Museum"
+  ],
+  "Librarian": [
+    "University",
+    "Museum",
+    "Home",
+    "Café",
+    "Church"
+  ]
+}

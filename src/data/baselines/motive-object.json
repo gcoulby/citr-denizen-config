@@ -1,0 +1,483 @@
+{
+  "Greed": [
+    "Money",
+    "Safe",
+    "Artefact",
+    "Goods",
+    "Vehicle",
+    "Owner",
+    "Paperwork"
+  ],
+  "Jealousy": [
+    "Family",
+    "Photograph",
+    "Rival",
+    "Secret document",
+    "Group",
+    "Owner"
+  ],
+  "Revenge": [
+    "Rival",
+    "Criminal",
+    "Witness",
+    "Weapons",
+    "Officer",
+    "Evidence"
+  ],
+  "Fear": [
+    "Disease",
+    "Weapons",
+    "Criminal",
+    "Investigation",
+    "Prisoner",
+    "Interloper"
+  ],
+  "Debt": [
+    "Money",
+    "Safe",
+    "Paperwork",
+    "Goods",
+    "Owner",
+    "Vehicle"
+  ],
+  "Love": [
+    "Family",
+    "Photograph",
+    "Secret document",
+    "Plant",
+    "Community",
+    "Group"
+  ],
+  "Shame": [
+    "Secret document",
+    "Photograph",
+    "Paperwork",
+    "Disease",
+    "Evidence",
+    "Witness"
+  ],
+  "Ambition": [
+    "Figurehead",
+    "Artefact",
+    "Discovery",
+    "Investigation",
+    "Structure",
+    "Owner"
+  ],
+  "Loyalty": [
+    "Community",
+    "Family",
+    "Group",
+    "Officer",
+    "Survivor",
+    "Resident"
+  ],
+  "Desperation": [
+    "Drug",
+    "Medicine",
+    "Money",
+    "Disease",
+    "Safe",
+    "Prisoner"
+  ],
+  "Pride": [
+    "Artefact",
+    "Figurehead",
+    "Photograph",
+    "Discovery",
+    "Structure",
+    "Goods"
+  ],
+  "Blackmail": [
+    "Secret document",
+    "Photograph",
+    "Paperwork",
+    "Evidence",
+    "Owner",
+    "Key"
+  ],
+  "Protection": [
+    "Family",
+    "Community",
+    "Survivor",
+    "Prisoner",
+    "Resident",
+    "Structure"
+  ],
+  "Payment": [
+    "Money",
+    "Goods",
+    "Safe",
+    "Paperwork",
+    "Owner",
+    "Vehicle"
+  ],
+  "Vendetta": [
+    "Rival",
+    "Criminal",
+    "Weapons",
+    "Witness",
+    "Evidence",
+    "Officer"
+  ],
+  "Duty": [
+    "Officer",
+    "Community",
+    "Structure",
+    "Group",
+    "Resident",
+    "Investigation"
+  ],
+  "Promise": [
+    "Family",
+    "Secret document",
+    "Key",
+    "Survivor",
+    "Community",
+    "Owner"
+  ],
+  "Curiosity": [
+    "Discovery",
+    "Artefact",
+    "Map",
+    "Investigation",
+    "Evidence",
+    "Reporter"
+  ],
+  "Justice": [
+    "Criminal",
+    "Evidence",
+    "Witness",
+    "Officer",
+    "Prisoner",
+    "Investigation"
+  ],
+  "Danger": [
+    "Weapons",
+    "Disease",
+    "Criminal",
+    "Structure",
+    "Interloper",
+    "Prisoner"
+  ],
+  "Boredom": [
+    "Vehicle",
+    "Goods",
+    "Animal",
+    "Visitor",
+    "Passerby",
+    "Structure"
+  ],
+  "Obsession": [
+    "Photograph",
+    "Artefact",
+    "Rival",
+    "Secret document",
+    "Owner",
+    "Discovery"
+  ],
+  "Guilt": [
+    "Survivor",
+    "Family",
+    "Photograph",
+    "Evidence",
+    "Witness",
+    "Prisoner"
+  ],
+  "Validation": [
+    "Discovery",
+    "Figurehead",
+    "Photograph",
+    "Artefact",
+    "Owner",
+    "Reporter"
+  ],
+  "Trauma": [
+    "Disease",
+    "Survivor",
+    "Photograph",
+    "Structure",
+    "Prisoner",
+    "Witness"
+  ],
+  "Faith": [
+    "Community",
+    "Figurehead",
+    "Artefact",
+    "Structure",
+    "Group",
+    "Resident"
+  ],
+  "Reputation": [
+    "Figurehead",
+    "Photograph",
+    "Paperwork",
+    "Community",
+    "Owner",
+    "Reporter"
+  ],
+  "Thrill": [
+    "Vehicle",
+    "Weapons",
+    "Animal",
+    "Structure",
+    "Passerby",
+    "Discovery"
+  ],
+  "Rivalry": [
+    "Rival",
+    "Figurehead",
+    "Goods",
+    "Group",
+    "Owner",
+    "Discovery"
+  ],
+  "Legacy": [
+    "Family",
+    "Artefact",
+    "Structure",
+    "Figurehead",
+    "Owner",
+    "Paperwork"
+  ],
+  "Freedom": [
+    "Prisoner",
+    "Vehicle",
+    "Key",
+    "Survivor",
+    "Interloper",
+    "Visitor"
+  ],
+  "Hatred": [
+    "Rival",
+    "Criminal",
+    "Family",
+    "Weapons",
+    "Officer",
+    "Witness"
+  ],
+  "Connection": [
+    "Family",
+    "Community",
+    "Group",
+    "Photograph",
+    "Resident",
+    "Visitor"
+  ],
+  "Calling": [
+    "Discovery",
+    "Figurehead",
+    "Community",
+    "Structure",
+    "Investigation",
+    "Group"
+  ],
+  "Recklessness": [
+    "Vehicle",
+    "Weapons",
+    "Drug",
+    "Animal",
+    "Passerby",
+    "Interloper"
+  ],
+  "Challenge": [
+    "Investigation",
+    "Discovery",
+    "Rival",
+    "Map",
+    "Structure",
+    "Group"
+  ],
+  "Completion": [
+    "Discovery",
+    "Map",
+    "Investigation",
+    "Paperwork",
+    "Evidence",
+    "Owner"
+  ],
+  "Absence": [
+    "Interloper",
+    "Passerby",
+    "Visitor",
+    "Resident",
+    "Survivor",
+    "Structure"
+  ],
+  "Curse": [
+    "Structure",
+    "Artefact",
+    "Disease",
+    "Prisoner",
+    "Owner",
+    "Figurehead"
+  ],
+  "Secrecy": [
+    "Secret document",
+    "Key",
+    "Safe",
+    "Paperwork",
+    "Owner",
+    "Evidence"
+  ],
+  "Knowledge": [
+    "Discovery",
+    "Map",
+    "Paperwork",
+    "Investigation",
+    "Evidence",
+    "Reporter"
+  ],
+  "Power": [
+    "Figurehead",
+    "Structure",
+    "Officer",
+    "Weapons",
+    "Owner",
+    "Group"
+  ],
+  "Control": [
+    "Officer",
+    "Structure",
+    "Prisoner",
+    "Weapons",
+    "Community",
+    "Owner"
+  ],
+  "Status": [
+    "Figurehead",
+    "Artefact",
+    "Photograph",
+    "Goods",
+    "Owner",
+    "Reporter"
+  ],
+  "Isolation": [
+    "Interloper",
+    "Resident",
+    "Prisoner",
+    "Structure",
+    "Visitor",
+    "Passerby"
+  ],
+  "Belonging": [
+    "Community",
+    "Family",
+    "Group",
+    "Resident",
+    "Survivor",
+    "Visitor"
+  ],
+  "Redemption": [
+    "Survivor",
+    "Evidence",
+    "Discovery",
+    "Prisoner",
+    "Witness",
+    "Officer"
+  ],
+  "Punishment": [
+    "Prisoner",
+    "Criminal",
+    "Officer",
+    "Weapons",
+    "Evidence",
+    "Structure"
+  ],
+  "Mercy": [
+    "Prisoner",
+    "Survivor",
+    "Medicine",
+    "Witness",
+    "Disease",
+    "Community"
+  ],
+  "Sacrifice": [
+    "Family",
+    "Survivor",
+    "Artefact",
+    "Plant",
+    "Community",
+    "Structure"
+  ],
+  "Survival": [
+    "Medicine",
+    "Survivor",
+    "Disease",
+    "Drug",
+    "Safe",
+    "Resident"
+  ],
+  "Inheritance": [
+    "Family",
+    "Artefact",
+    "Paperwork",
+    "Structure",
+    "Owner",
+    "Goods"
+  ],
+  "Competition": [
+    "Rival",
+    "Goods",
+    "Discovery",
+    "Group",
+    "Structure",
+    "Officer"
+  ],
+  "Devotion": [
+    "Family",
+    "Community",
+    "Figurehead",
+    "Plant",
+    "Group",
+    "Structure"
+  ],
+  "Resentment": [
+    "Rival",
+    "Family",
+    "Photograph",
+    "Paperwork",
+    "Group",
+    "Owner"
+  ],
+  "Paranoia": [
+    "Investigation",
+    "Witness",
+    "Evidence",
+    "Interloper",
+    "Reporter",
+    "Passerby"
+  ],
+  "Compulsion": [
+    "Drug",
+    "Money",
+    "Artefact",
+    "Vehicle",
+    "Goods",
+    "Owner"
+  ],
+  "Denial": [
+    "Evidence",
+    "Paperwork",
+    "Secret document",
+    "Witness",
+    "Investigation",
+    "Reporter"
+  ],
+  "Longing": [
+    "Photograph",
+    "Family",
+    "Secret document",
+    "Plant",
+    "Community",
+    "Owner"
+  ],
+  "Vindication": [
+    "Evidence",
+    "Witness",
+    "Discovery",
+    "Paperwork",
+    "Investigation",
+    "Officer"
+  ]
+}
