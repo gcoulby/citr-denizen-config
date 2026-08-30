@@ -16,6 +16,7 @@ interface ResultTableProps {
 
 interface Column {
   heading: string
+  signpost: string
   values: string[]
   labels: string[]
 }
@@ -32,18 +33,21 @@ export function ResultTable({ table, arcana }: ResultTableProps) {
   const columns: Column[] = [
     {
       heading: 'Suspect',
+      signpost: 'who',
       values: table.suspects.values,
       labels: isTarot ? arcana.suspect : suitLabels,
     },
     {
-      heading: 'Truth',
-      values: table.truths.values,
-      labels: isTarot ? arcana.truth : suitLabels,
-    },
-    {
       heading: 'Motive',
+      signpost: 'why',
       values: table.motives.values,
       labels: isTarot ? arcana.motive : suitLabels,
+    },
+    {
+      heading: 'Means',
+      signpost: 'how',
+      values: table.means.values,
+      labels: isTarot ? arcana.means : suitLabels,
     },
   ]
 
@@ -53,7 +57,12 @@ export function ResultTable({ table, arcana }: ResultTableProps) {
         <TableRow>
           {!isTarot && <TableHead>Suit</TableHead>}
           {columns.map((column) => (
-            <TableHead key={column.heading}>{column.heading}</TableHead>
+            <TableHead key={column.heading}>
+              <span className="block font-body text-[10px] font-normal uppercase tracking-widest text-ink-soft">
+                {column.signpost}
+              </span>
+              {column.heading}
+            </TableHead>
           ))}
         </TableRow>
       </TableHeader>

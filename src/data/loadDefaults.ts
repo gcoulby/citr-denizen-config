@@ -12,9 +12,9 @@ import { THEMES } from '@/types'
 import arcana from './shared/arcana.json'
 import motives from './shared/motives.json'
 import treacheries from './shared/treacheries.json'
-import truths from './shared/truths.json'
+import means from './shared/means.json'
 
-import truthTreachery from './baselines/truth-treachery.json'
+import meansTreachery from './baselines/means-treachery.json'
 
 import noirSuspects from './baselines/noir/suspects.json'
 import noirLocations from './baselines/noir/locations.json'
@@ -66,8 +66,8 @@ const THEME_DATA: Record<Theme, ThemeSource> = {
   },
 }
 
-export function loadSharedTruths(): string[] {
-  return [...truths]
+export function loadSharedMeans(): string[] {
+  return [...means]
 }
 
 export function loadSharedMotives(): string[] {
@@ -81,7 +81,7 @@ export function loadSharedTreacheries(): string[] {
 export function loadArcana(): ArcanaGroups {
   return {
     suspect: [...arcana.suspect],
-    truth: [...arcana.truth],
+    means: [...arcana.means],
     motive: [...arcana.motive],
   }
 }
@@ -96,7 +96,7 @@ export function loadThemeContent(theme: Theme): ThemeContent {
 }
 
 export function loadSharedTreacheryBaseline(): EligibilityMap {
-  return cloneMap(truthTreachery)
+  return cloneMap(meansTreachery)
 }
 
 export function loadThemeBaselines(theme: Theme): ThemeBaselines {
@@ -128,10 +128,10 @@ export function loadDefaultConfig(): Config {
   const themes = {} as Record<Theme, ThemeConfig>
   for (const theme of THEMES) themes[theme] = defaultThemeConfig(theme)
   return {
-    truths: loadSharedTruths(),
+    means: loadSharedMeans(),
     motives: loadSharedMotives(),
     treacheries: loadSharedTreacheries(),
-    treacheryMap: pickKeys(loadSharedTreacheryBaseline(), loadSharedTruths()),
+    treacheryMap: pickKeys(loadSharedTreacheryBaseline(), loadSharedMeans()),
     themes,
   }
 }

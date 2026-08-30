@@ -4,8 +4,8 @@ import {
   loadDefaultConfig,
   loadSharedMotives,
   loadSharedTreacheries,
+  loadSharedMeans,
   loadSharedTreacheryBaseline,
-  loadSharedTruths,
   loadThemeBaselines,
   loadThemeContent,
 } from '@/data/loadDefaults'
@@ -14,13 +14,16 @@ import { resolveConfig } from '@/lib/resolveConfig'
 import type { Axis, Config, EligibilityMap, ResolvedConfig, SaveStatus, Theme, ThemeConfig } from '@/types'
 import { THEMES } from '@/types'
 
-const STORAGE_KEY = 'citr-config-v1'
+// Bumped from v1 when the shared "truths" list was renamed to "means" and its
+// contents + the means→treachery baseline were rebuilt. A stale v1 blob would
+// otherwise keep generating the old word list.
+const STORAGE_KEY = 'citr-config-v2'
 
-export type EditableList = 'suspects' | 'truths' | 'motives' | 'treacheries'
+export type EditableList = 'suspects' | 'means' | 'motives' | 'treacheries'
 
 export interface AutofillSummary {
   addedSuspects: number
-  addedTruths: number
+  addedMeans: number
   addedMotives: number
   addedTreacheries: number
   motiveObjectSkipped: boolean
@@ -57,7 +60,7 @@ function cloneConfig(config: Config): Config {
   const themes = {} as Record<Theme, ThemeConfig>
   for (const theme of THEMES) themes[theme] = cloneThemeConfig(config.themes[theme])
   return {
-    truths: [...config.truths],
+    means: [...config.means],
     motives: [...config.motives],
     treacheries: [...config.treacheries],
     treacheryMap: cloneMap(config.treacheryMap),
@@ -114,7 +117,7 @@ export function useConfigStore(theme: Theme): UseConfigStore {
         } else {
           if (next[list].includes(name)) return prev
           next[list] = [...next[list], name]
-          if (list === 'truths' && !next.treacheryMap[name]) next.treacheryMap[name] = []
+          if (list === 'means' && !next.treacheryMap[name]) next.treacheryMap[name] = []
           if (list === 'motives') {
             for (const t of THEMES) {
               if (!next.themes[t].objectMap[name]) next.themes[t].objectMap[name] = []
@@ -142,8 +145,8 @@ export function useConfigStore(theme: Theme): UseConfigStore {
             )
             renameKey(next.themes[theme].locationMap, oldName, newName)
             break
-          case 'truths':
-            next.truths = next.truths.map((v) => (v === oldName ? newName : v))
+          case 'means':
+            next.means = next.means.map((v) => (v === oldName ? newName : v))
             renameKey(next.treacheryMap, oldName, newName)
             break
           case 'motives':
@@ -172,8 +175,8 @@ export function useConfigStore(theme: Theme): UseConfigStore {
             next.themes[theme].suspects = next.themes[theme].suspects.filter((s) => s !== name)
             delete next.themes[theme].locationMap[name]
             break
-          case 'truths':
-            next.truths = next.truths.filter((v) => v !== name)
+          case 'means':
+            next.means = next.means.filter((v) => v !== name)
             delete next.treacheryMap[name]
             break
           case 'motives':
@@ -213,7 +216,7 @@ export function useConfigStore(theme: Theme): UseConfigStore {
 
   const autofillFromBaseline = useCallback((): AutofillSummary => {
     const defaultSuspects = loadThemeContent(theme).suspects
-    const defaultTruths = loadSharedTruths()
+    const defaultMeans = loadSharedMeans()
     const defaultMotives = loadSharedMotives()
     const defaultTreacheries = loadSharedTreacheries()
     const themeBaselines = loadThemeBaselines(theme)
@@ -222,7 +225,7 @@ export function useConfigStore(theme: Theme): UseConfigStore {
     const next = cloneConfig(config)
     const summary: AutofillSummary = {
       addedSuspects: 0,
-      addedTruths: 0,
+      addedMeans: 0,
       addedMotives: 0,
       addedTreacheries: 0,
       motiveObjectSkipped: themeBaselines.motiveObject === null,
@@ -231,8 +234,8 @@ export function useConfigStore(theme: Theme): UseConfigStore {
     summary.addedSuspects = appendMissing(next.themes[theme].suspects, defaultSuspects, (list) => {
       next.themes[theme].suspects = list
     })
-    summary.addedTruths = appendMissing(next.truths, defaultTruths, (list) => {
-      next.truths = list
+    summary.addedMeans = appendMissing(next.means, defaultMeans, (list) => {
+      next.means = list
     })
     summary.addedMotives = appendMissing(next.motives, defaultMotives, (list) => {
       next.motives = list
@@ -242,7 +245,7 @@ export function useConfigStore(theme: Theme): UseConfigStore {
     })
 
     mergeSeeds(next.themes[theme].locationMap, themeBaselines.suspectLocation, next.themes[theme].suspects)
-    mergeSeeds(next.treacheryMap, treacheryBaseline, next.truths)
+    mergeSeeds(next.treacheryMap, treacheryBaseline, next.means)
     if (themeBaselines.motiveObject !== null) {
       mergeSeeds(next.themes[theme].objectMap, themeBaselines.motiveObject, next.motives)
     }

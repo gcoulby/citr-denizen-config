@@ -26,7 +26,7 @@ export function Header({
             Caught in the Rain
           </h1>
           <p className="font-body text-ink-soft text-sm italic">
-            Truth Table Configuration
+            Means Table Configuration
           </p>
         </div>
         <div className="flex flex-col items-end gap-2">

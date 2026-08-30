@@ -14,10 +14,10 @@ import type { ContextField } from '@/components/generator/ContextSelectors'
 import { THEME_LABELS } from '@/types'
 
 const TABS: TabDef[] = [
-  { value: 'suspects', label: 'Suspects' },
-  { value: 'truths', label: 'Truths' },
-  { value: 'motives', label: 'Motives' },
-  { value: 'treacheries', label: 'Treacheries' },
+  { value: 'suspects', label: 'Suspects', signpost: 'who' },
+  { value: 'motives', label: 'Motives', signpost: 'why' },
+  { value: 'means', label: 'Means', signpost: 'how' },
+  { value: 'treacheries', label: 'Treacheries', signpost: 'what' },
 ]
 
 const ARCANA = loadArcana()
@@ -43,7 +43,7 @@ export default function App() {
     const summary = store.autofillFromBaseline()
     const added =
       summary.addedSuspects +
-      summary.addedTruths +
+      summary.addedMeans +
       summary.addedMotives +
       summary.addedTreacheries
     const parts = [`Autofill complete — ${added} missing default${added === 1 ? '' : 's'} added.`]
@@ -109,18 +109,19 @@ export default function App() {
           />
         </TabsContent>
 
-        <TabsContent value="truths" className="space-y-8">
+        <TabsContent value="means" className="space-y-8">
           <RoleListEditor
-            label="Truths"
-            items={resolved.truths}
-            onAdd={(name) => store.addRole('truths', name)}
-            onRename={(oldName, newName) => store.renameRole('truths', oldName, newName)}
-            onRemove={(name) => store.removeRole('truths', name)}
+            label="Means"
+            noun="means"
+            items={resolved.means}
+            onAdd={(name) => store.addRole('means', name)}
+            onRename={(oldName, newName) => store.renameRole('means', oldName, newName)}
+            onRemove={(name) => store.removeRole('means', name)}
           />
           <EligibilityMatrix
-            roleLabel="Truth"
+            roleLabel="Means"
             contextLabel="Treachery"
-            roles={resolved.truths}
+            roles={resolved.means}
             contexts={resolved.treacheries}
             isChecked={(role, context) => (config.treacheryMap[role] ?? []).includes(context)}
             onToggle={(role, context) => store.toggleCell('treachery', role, context)}

@@ -1,6 +1,6 @@
 export type Axis = 'location' | 'treachery' | 'object'
 
-export type RoleAxis = 'suspects' | 'truths' | 'motives'
+export type RoleAxis = 'suspects' | 'means' | 'motives'
 
 export type Theme = 'noir' | 'fantasy' | 'horror' | 'scifi'
 
@@ -41,10 +41,10 @@ export interface ThemeConfig {
 
 // The whole save file: shared lists plus every theme's scoped data.
 export interface Config {
-  truths: string[] // shared across all themes
+  means: string[] // shared across all themes
   motives: string[] // shared across all themes
   treacheries: string[] // shared across all themes
-  treacheryMap: EligibilityMap // truth (shared) -> treachery (shared)
+  treacheryMap: EligibilityMap // means (shared) -> treachery (shared)
   themes: Record<Theme, ThemeConfig>
 }
 
@@ -52,7 +52,7 @@ export interface Config {
 // logic and matrices consume.
 export interface ResolvedConfig {
   suspects: string[]
-  truths: string[]
+  means: string[]
   motives: string[]
   locations: string[]
   treacheries: string[]
@@ -72,7 +72,7 @@ export interface Suit {
 
 export interface ArcanaGroups {
   suspect: string[] // 7 names, I–VII
-  truth: string[] // 7 names, VIII–XIV
+  means: string[] // 7 names, VIII–XIV
   motive: string[] // 7 names, XV–XXI
 }
 
@@ -87,7 +87,7 @@ export interface GeneratedTable {
   treachery: string
   mode: CardMode
   suspects: DrawResult
-  truths: DrawResult
+  means: DrawResult
   motives: DrawResult
 }
 

@@ -19,7 +19,7 @@ describe('default baselines cover every context', () => {
             const object = resolved.objects[0]!
             const table = generateTable(resolved, location, object, treachery, mode)
             expect(table.suspects.fellBack, `${theme} ${mode} location ${location}`).toBe(false)
-            expect(table.truths.fellBack, `${theme} ${mode} treachery ${treachery}`).toBe(false)
+            expect(table.means.fellBack, `${theme} ${mode} treachery ${treachery}`).toBe(false)
           }
         }
         if (hasObjectBaseline) {

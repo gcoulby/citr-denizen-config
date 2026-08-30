@@ -10,7 +10,7 @@ export function resolveConfig(config: Config, theme: Theme): ResolvedConfig {
   const themeConfig = config.themes[theme]
   return {
     suspects: themeConfig.suspects,
-    truths: config.truths,
+    means: config.means,
     motives: config.motives,
     locations: content.locations,
     treacheries: config.treacheries,
