@@ -7,9 +7,19 @@ interface RoleListEditorProps {
   onAdd: (name: string) => void
   onRename: (oldName: string, newName: string) => void
   onRemove: (name: string) => void
+  // Singular noun for the "Add …" field; defaults to the label minus a trailing "s".
+  noun?: string
 }
 
-export function RoleListEditor({ label, items, onAdd, onRename, onRemove }: RoleListEditorProps) {
+export function RoleListEditor({
+  label,
+  items,
+  onAdd,
+  onRename,
+  onRemove,
+  noun,
+}: RoleListEditorProps) {
+  const addNoun = noun ?? label.replace(/s$/, '').toLowerCase()
   return (
     <section>
       <div className="mb-2 flex items-baseline justify-between">
@@ -30,7 +40,7 @@ export function RoleListEditor({ label, items, onAdd, onRename, onRemove }: Role
           ))}
         </ul>
       )}
-      <AddRoleForm label={label.replace(/s$/, '').toLowerCase()} onAdd={onAdd} />
+      <AddRoleForm label={addNoun} onAdd={onAdd} />
     </section>
   )
 }

@@ -14,10 +14,10 @@ import type { ContextField } from '@/components/generator/ContextSelectors'
 import { THEME_LABELS } from '@/types'
 
 const TABS: TabDef[] = [
-  { value: 'suspects', label: 'Suspects' },
-  { value: 'truths', label: 'Truths' },
-  { value: 'motives', label: 'Motives' },
-  { value: 'treacheries', label: 'Treacheries' },
+  { value: 'suspects', label: 'Suspects', signpost: 'who' },
+  { value: 'motives', label: 'Motives', signpost: 'why' },
+  { value: 'truths', label: 'Means', signpost: 'how' },
+  { value: 'treacheries', label: 'Treacheries', signpost: 'what' },
 ]
 
 const ARCANA = loadArcana()
@@ -111,14 +111,15 @@ export default function App() {
 
         <TabsContent value="truths" className="space-y-8">
           <RoleListEditor
-            label="Truths"
+            label="Means"
+            noun="means"
             items={resolved.truths}
             onAdd={(name) => store.addRole('truths', name)}
             onRename={(oldName, newName) => store.renameRole('truths', oldName, newName)}
             onRemove={(name) => store.removeRole('truths', name)}
           />
           <EligibilityMatrix
-            roleLabel="Truth"
+            roleLabel="Means"
             contextLabel="Treachery"
             roles={resolved.truths}
             contexts={resolved.treacheries}

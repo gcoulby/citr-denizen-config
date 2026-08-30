@@ -3,8 +3,8 @@ import type { GeneratedTable } from '@/types'
 export function FallbackNote({ table }: { table: GeneratedTable }) {
   const fellBack = [
     table.suspects.fellBack ? 'suspects' : null,
-    table.truths.fellBack ? 'truths' : null,
     table.motives.fellBack ? 'motives' : null,
+    table.truths.fellBack ? 'means' : null,
   ].filter((value): value is string => value !== null)
 
   if (fellBack.length === 0) return null

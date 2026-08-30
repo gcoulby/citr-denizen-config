@@ -24,24 +24,28 @@ export function ContextSelectors(props: ContextSelectorsProps) {
   const rows: Array<{
     field: ContextField
     label: string
+    signpost: string
     value: string
     options: string[]
   }> = [
     {
       field: 'location',
       label: 'Location',
+      signpost: 'where',
       value: props.location,
       options: props.locations,
     },
     {
       field: 'object',
       label: 'Object',
+      signpost: 'what',
       value: props.object,
       options: props.objects,
     },
     {
       field: 'treachery',
       label: 'Treachery',
+      signpost: 'what',
       value: props.treachery,
       options: props.treacheries,
     },
@@ -49,10 +53,13 @@ export function ContextSelectors(props: ContextSelectorsProps) {
 
   return (
     <div className="gap-3 grid sm:grid-cols-3">
-      {rows.map(({ field, label, value, options }) => (
+      {rows.map(({ field, label, signpost, value, options }) => (
         <div key={field}>
-          <label className="block mb-1 font-body font-semibold text-ink-soft text-xs uppercase tracking-wide">
+          <label className="mb-1 flex items-baseline gap-1.5 font-body font-semibold text-ink-soft text-xs uppercase tracking-wide">
             {label}
+            <span className="text-[10px] font-normal tracking-widest text-ink-soft/70">
+              {signpost}
+            </span>
           </label>
           <div className="flex gap-2">
             <Select
