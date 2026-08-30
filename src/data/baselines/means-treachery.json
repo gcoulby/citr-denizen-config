@@ -1,0 +1,570 @@
+{
+  "Adulteration": [
+    "Became corrupted",
+    "Was modified",
+    "Deteriorated",
+    "Was depleted",
+    "Suffered",
+    "Changed the object",
+    "Withered",
+    "Was consumed"
+  ],
+  "Ambush": [
+    "Suffered",
+    "Became vulnerable",
+    "Was disrupted",
+    "Appeared",
+    "Exploded",
+    "Perished",
+    "Destroyed the object",
+    "Was stolen"
+  ],
+  "Arson": [
+    "Was destroyed",
+    "Exploded",
+    "Damaged the object",
+    "Deteriorated",
+    "Crumbled",
+    "Perished",
+    "Destroyed the object",
+    "Was erased"
+  ],
+  "Blackmail": [
+    "Changed",
+    "Became corrupted",
+    "Was disrupted",
+    "Suffered",
+    "Became vulnerable",
+    "Failed",
+    "Was revealed",
+    "Became exposed"
+  ],
+  "Bootlegging": [
+    "Was replaced",
+    "Appeared",
+    "Was hidden",
+    "Became corrupted",
+    "Was consumed",
+    "Manifested",
+    "Was modified",
+    "Was depleted"
+  ],
+  "Bribery": [
+    "Became corrupted",
+    "Was disrupted",
+    "Was hidden",
+    "Changed",
+    "Was replaced",
+    "Failed",
+    "Was revealed",
+    "Warped"
+  ],
+  "Burglary": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was depleted",
+    "Was hidden",
+    "Became exposed",
+    "Damaged the object",
+    "Exposed the object"
+  ],
+  "Coercion": [
+    "Became vulnerable",
+    "Suffered",
+    "Failed",
+    "Was disrupted",
+    "Became corrupted",
+    "Was destroyed",
+    "Warped",
+    "Changed"
+  ],
+  "Concealment": [
+    "Was hidden",
+    "Was sealed away",
+    "Vanished",
+    "Disappeared",
+    "Became exposed",
+    "Was erased",
+    "Evaporated"
+  ],
+  "Confiscation": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was sealed away",
+    "Was depleted",
+    "Was disrupted",
+    "Was hidden"
+  ],
+  "Contamination": [
+    "Became corrupted",
+    "Deteriorated",
+    "Withered",
+    "Suffered",
+    "Was depleted",
+    "Perished",
+    "Changed the object",
+    "Was consumed"
+  ],
+  "Corrupting": [
+    "Became corrupted",
+    "Warped",
+    "Deteriorated",
+    "Was modified",
+    "Transformed",
+    "Evolved",
+    "Revealed the object",
+    "Changed",
+    "Withered"
+  ],
+  "Counterfeiting": [
+    "Was replaced",
+    "Changed",
+    "Was modified",
+    "Became the object",
+    "Transformed",
+    "Was depleted",
+    "Revealed the object"
+  ],
+  "Deception": [
+    "Changed",
+    "Was replaced",
+    "Became exposed",
+    "Was revealed",
+    "Disappeared",
+    "Manifested",
+    "Was modified",
+    "Became the object",
+    "Revealed the object"
+  ],
+  "Demolition": [
+    "Was destroyed",
+    "Crumbled",
+    "Exploded",
+    "Damaged the object",
+    "Deteriorated",
+    "Destroyed the object",
+    "Perished"
+  ],
+  "Detonation": [
+    "Exploded",
+    "Was destroyed",
+    "Damaged the object",
+    "Crumbled",
+    "Perished",
+    "Destroyed the object",
+    "Was disrupted"
+  ],
+  "Disguise": [
+    "Changed",
+    "Transformed",
+    "Was modified",
+    "Became the object",
+    "Warped",
+    "Was consumed",
+    "Exposed the object",
+    "Was hidden"
+  ],
+  "Distraction": [
+    "Was stolen",
+    "Was disrupted",
+    "Vanished",
+    "Disappeared",
+    "Appeared",
+    "Failed",
+    "Became vulnerable"
+  ],
+  "Diversion": [
+    "Was disrupted",
+    "Was depleted",
+    "Was stolen",
+    "Vanished",
+    "Failed",
+    "Evaporated",
+    "Was consumed"
+  ],
+  "Draining": [
+    "Was depleted",
+    "Evaporated",
+    "Was consumed",
+    "Withered",
+    "Deteriorated",
+    "Vanished",
+    "Suffered"
+  ],
+  "Embezzlement": [
+    "Was stolen",
+    "Was depleted",
+    "Was hidden",
+    "Became corrupted",
+    "Evaporated",
+    "Was consumed",
+    "Exposed the object"
+  ],
+  "Entrapment": [
+    "Became vulnerable",
+    "Was disrupted",
+    "Appeared",
+    "Became exposed",
+    "Was revealed",
+    "Was consumed",
+    "Exposed the object"
+  ],
+  "Extortion": [
+    "Was stolen",
+    "Became vulnerable",
+    "Suffered",
+    "Was depleted",
+    "Was disrupted",
+    "Evolved",
+    "Failed"
+  ],
+  "Extraction": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was depleted",
+    "Was revealed",
+    "Was consumed",
+    "Was disrupted",
+    "Revealed the object",
+    "Evaporated"
+  ],
+  "Fabrication": [
+    "Was replaced",
+    "Changed",
+    "Was modified",
+    "Manifested",
+    "Appeared",
+    "Became the object",
+    "Revealed the object",
+    "Evolved"
+  ],
+  "Falsification": [
+    "Changed",
+    "Was modified",
+    "Was replaced",
+    "Was erased",
+    "Became corrupted",
+    "Was revealed",
+    "Became exposed"
+  ],
+  "Forgery": [
+    "Was replaced",
+    "Changed",
+    "Was modified",
+    "Changed the object",
+    "Became the object",
+    "Evolved",
+    "Manifested"
+  ],
+  "Framing": [
+    "Was replaced",
+    "Changed",
+    "Became exposed",
+    "Was modified",
+    "Was revealed",
+    "Manifested",
+    "Evolved",
+    "Revealed the object"
+  ],
+  "Holdup": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Became vulnerable",
+    "Suffered",
+    "Was depleted",
+    "Was disrupted"
+  ],
+  "Hijacking": [
+    "Was stolen",
+    "Was disrupted",
+    "Vanished",
+    "Disappeared",
+    "Was replaced",
+    "Became vulnerable",
+    "Was consumed"
+  ],
+  "Impersonation": [
+    "Was replaced",
+    "Changed",
+    "Transformed",
+    "Became the object",
+    "Warped",
+    "Deteriorated",
+    "Was modified"
+  ],
+  "Incitement": [
+    "Was disrupted",
+    "Suffered",
+    "Became corrupted",
+    "Failed",
+    "Exploded",
+    "Warped",
+    "Manifested"
+  ],
+  "Infiltration": [
+    "Appeared",
+    "Was hidden",
+    "Was disrupted",
+    "Became exposed",
+    "Was revealed",
+    "Evaporated",
+    "Manifested",
+    "Exposed the object"
+  ],
+  "Interception": [
+    "Was revealed",
+    "Became exposed",
+    "Was hidden",
+    "Was disrupted",
+    "Was stolen",
+    "Disappeared",
+    "Vanished",
+    "Revealed the object",
+    "Exposed the object"
+  ],
+  "Intimidation": [
+    "Suffered",
+    "Became vulnerable",
+    "Failed",
+    "Was disrupted",
+    "Warped",
+    "Crumbled",
+    "Withered"
+  ],
+  "Lockpicking": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Became vulnerable",
+    "Became exposed",
+    "Was hidden",
+    "Was disrupted",
+    "Exposed the object"
+  ],
+  "Looting": [
+    "Was stolen",
+    "Was depleted",
+    "Vanished",
+    "Disappeared",
+    "Was destroyed",
+    "Damaged the object",
+    "Crumbled",
+    "Destroyed the object"
+  ],
+  "Manipulation": [
+    "Changed",
+    "Warped",
+    "Was modified",
+    "Became corrupted",
+    "Transformed",
+    "Withered",
+    "Evolved"
+  ],
+  "Masking": [
+    "Was hidden",
+    "Became exposed",
+    "Vanished",
+    "Disappeared",
+    "Was modified",
+    "Was erased",
+    "Appeared",
+    "Was sealed away",
+    "Became the object"
+  ],
+  "Misdirection": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was replaced",
+    "Was disrupted",
+    "Became exposed",
+    "Appeared"
+  ],
+  "Misleading": [
+    "Changed",
+    "Failed",
+    "Was disrupted",
+    "Was modified",
+    "Became exposed",
+    "Was revealed",
+    "Manifested"
+  ],
+  "Overloading": [
+    "Was destroyed",
+    "Exploded",
+    "Crumbled",
+    "Failed",
+    "Was disrupted",
+    "Deteriorated",
+    "Damaged the object",
+    "Perished",
+    "Destroyed the object"
+  ],
+  "Perjury": [
+    "Was revealed",
+    "Changed",
+    "Became exposed",
+    "Was modified",
+    "Was replaced",
+    "Was erased",
+    "Failed"
+  ],
+  "Pickpocketing": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was depleted",
+    "Was hidden",
+    "Became vulnerable",
+    "Became exposed"
+  ],
+  "Planting": [
+    "Appeared",
+    "Manifested",
+    "Was revealed",
+    "Became exposed",
+    "Was replaced",
+    "Revealed the object",
+    "Was modified"
+  ],
+  "Poisoning": [
+    "Suffered",
+    "Perished",
+    "Became corrupted",
+    "Deteriorated",
+    "Withered",
+    "Was erased",
+    "Was depleted"
+  ],
+  "Redaction": [
+    "Was erased",
+    "Was hidden",
+    "Vanished",
+    "Disappeared",
+    "Was modified",
+    "Became exposed",
+    "Was sealed away",
+    "Exposed the object"
+  ],
+  "Repossession": [
+    "Was stolen",
+    "Vanished",
+    "Disappeared",
+    "Was sealed away",
+    "Was depleted",
+    "Was disrupted",
+    "Was replaced"
+  ],
+  "Rigging": [
+    "Failed",
+    "Was disrupted",
+    "Changed",
+    "Was modified",
+    "Exploded",
+    "Became corrupted",
+    "Changed the object"
+  ],
+  "Sabotage": [
+    "Was destroyed",
+    "Was disrupted",
+    "Failed",
+    "Deteriorated",
+    "Exploded",
+    "Damaged the object",
+    "Crumbled",
+    "Changed the object",
+    "Perished",
+    "Destroyed the object"
+  ],
+  "Seduction": [
+    "Changed",
+    "Manifested",
+    "Transformed",
+    "Was disrupted",
+    "Evolved",
+    "Became corrupted",
+    "Warped"
+  ],
+  "Shakedown": [
+    "Was stolen",
+    "Became vulnerable",
+    "Suffered",
+    "Was depleted",
+    "Was disrupted",
+    "Failed"
+  ],
+  "Skimming": [
+    "Was depleted",
+    "Was stolen",
+    "Evaporated",
+    "Was consumed",
+    "Was hidden",
+    "Deteriorated"
+  ],
+  "Smuggling": [
+    "Vanished",
+    "Was hidden",
+    "Appeared",
+    "Disappeared",
+    "Was sealed away",
+    "Was replaced",
+    "Was consumed"
+  ],
+  "Substitution": [
+    "Was replaced",
+    "Changed",
+    "Was modified",
+    "Became the object",
+    "Transformed",
+    "Evolved"
+  ],
+  "Tampering": [
+    "Was modified",
+    "Changed the object",
+    "Damaged the object",
+    "Became corrupted",
+    "Changed",
+    "Failed",
+    "Was disrupted"
+  ],
+  "Trespass": [
+    "Was disrupted",
+    "Became exposed",
+    "Appeared",
+    "Was revealed",
+    "Was hidden",
+    "Changed the object",
+    "Damaged the object",
+    "Revealed the object"
+  ],
+  "Undermining": [
+    "Became vulnerable",
+    "Failed",
+    "Crumbled",
+    "Deteriorated",
+    "Was disrupted",
+    "Withered",
+    "Was destroyed"
+  ],
+  "Vandalism": [
+    "Was destroyed",
+    "Damaged the object",
+    "Changed the object",
+    "Deteriorated",
+    "Crumbled",
+    "Destroyed the object"
+  ],
+  "Withholding": [
+    "Was depleted",
+    "Was hidden",
+    "Vanished",
+    "Disappeared",
+    "Was sealed away",
+    "Suffered",
+    "Failed"
+  ]
+}

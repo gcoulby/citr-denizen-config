@@ -26,7 +26,7 @@ export function ResetButton({ onReset }: { onReset: () => void }) {
         <DialogHeader>
           <DialogTitle>Reset the configuration?</DialogTitle>
           <DialogDescription>
-            This restores the shipped suspect, truth, and motive lists and their baseline
+            This restores the shipped suspect, means, and motive lists and their baseline
             eligibility. Your current edits to those lists will be lost. Generator preferences
             are not affected.
           </DialogDescription>

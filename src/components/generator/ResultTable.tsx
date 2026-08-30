@@ -46,8 +46,8 @@ export function ResultTable({ table, arcana }: ResultTableProps) {
     {
       heading: 'Means',
       signpost: 'how',
-      values: table.truths.values,
-      labels: isTarot ? arcana.truth : suitLabels,
+      values: table.means.values,
+      labels: isTarot ? arcana.means : suitLabels,
     },
   ]
 

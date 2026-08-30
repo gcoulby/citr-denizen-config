@@ -54,7 +54,7 @@ export function generateTable(
     treachery,
     mode,
     suspects: pickN(eligible(config.suspects, config.locationMap, location), config.suspects, n),
-    truths: pickN(eligible(config.truths, config.treacheryMap, treachery), config.truths, n),
+    means: pickN(eligible(config.means, config.treacheryMap, treachery), config.means, n),
     motives: pickN(eligible(config.motives, config.objectMap, object), config.motives, n),
   }
 }

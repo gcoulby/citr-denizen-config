@@ -2,22 +2,23 @@ import { describe, expect, it } from 'vitest'
 
 import {
   loadDefaultConfig,
-  loadSharedTruths,
+  loadSharedMeans,
   loadThemeBaselines,
   loadThemeContent,
 } from '@/data/loadDefaults'
 import { THEMES } from '@/types'
 
-describe('shared truths', () => {
-  it('applies the three cross-genre word swaps', () => {
-    const truths = loadSharedTruths()
-    expect(truths).toContain('Interception')
-    expect(truths).toContain('Tribute')
-    expect(truths).toContain('Seizure')
-    expect(truths).not.toContain('Wiretapping')
-    expect(truths).not.toContain('Racketeering')
-    expect(truths).not.toContain('Hijacking')
-    expect(truths).toHaveLength(60)
+describe('shared means', () => {
+  it('ships 60 concrete-method entries that pass the "how" test', () => {
+    const means = loadSharedMeans()
+    expect(means).toContain('Burglary')
+    expect(means).toContain('Adulteration')
+    expect(means).toContain('Shakedown')
+    // Aftermath / relationship / whole-category words were purged.
+    expect(means).not.toContain('Confession')
+    expect(means).not.toContain('Complicity')
+    expect(means).not.toContain('Espionage')
+    expect(means).toHaveLength(60)
   })
 })
 

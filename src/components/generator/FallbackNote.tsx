@@ -4,7 +4,7 @@ export function FallbackNote({ table }: { table: GeneratedTable }) {
   const fellBack = [
     table.suspects.fellBack ? 'suspects' : null,
     table.motives.fellBack ? 'motives' : null,
-    table.truths.fellBack ? 'means' : null,
+    table.means.fellBack ? 'means' : null,
   ].filter((value): value is string => value !== null)
 
   if (fellBack.length === 0) return null

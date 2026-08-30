@@ -33,7 +33,7 @@ describe('pickN', () => {
 describe('generateTable', () => {
   const config: ResolvedConfig = {
     suspects: ['S1', 'S2', 'S3', 'S4', 'S5'],
-    truths: ['T1', 'T2', 'T3', 'T4', 'T5'],
+    means: ['T1', 'T2', 'T3', 'T4', 'T5'],
     motives: ['M1', 'M2', 'M3', 'M4', 'M5'],
     locations: ['Bank', 'Pier'],
     treacheries: ['Vanished', 'Nope'],
@@ -54,8 +54,8 @@ describe('generateTable', () => {
 
   it('flags fallback when too few roles are eligible', () => {
     const table = generateTable(config, 'Bank', 'Key', 'Vanished', 'standard')
-    expect(table.truths.fellBack).toBe(true)
-    expect(table.truths.values).toHaveLength(4)
-    expect(new Set(table.truths.values).size).toBe(4)
+    expect(table.means.fellBack).toBe(true)
+    expect(table.means.values).toHaveLength(4)
+    expect(new Set(table.means.values).size).toBe(4)
   })
 })
